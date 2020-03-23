@@ -27,7 +27,8 @@ class AdminTravel extends Authenticatable
         'email',
         'password',
         'path_avatar',
-        'telephone'
+        'telephone',
+        'status'
     ];
 
     /**

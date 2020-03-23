@@ -5,7 +5,7 @@
             </li>
             <li class=" nav-item"><a href="{{route('adashboard.index')}}"><i class="fa fa-th"></i><span class="menu-title" data-i18n="Email Application">Dashboard</span></a>
             </li>
-            <li class=" nav-item"><a href="{{route('admintravel.index')}}"><i class="fa fa-university"></i><span class="menu-title" data-i18n="Email Application">Register</span></a>
+            <li class=" nav-item"><a href="{{route('notifikasi.index')}}"><i class="fa fa-university"></i><span class="menu-title" data-i18n="Email Application">Notifikasi</span></a>
             </li>
             <li class=" nav-item"><a href="{{route('travel.index')}}"><i class="fa fa-university"></i><span class="menu-title" data-i18n="Email Application">Travel</span></a>
             </li>

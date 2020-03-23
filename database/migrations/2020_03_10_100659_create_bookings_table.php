@@ -17,9 +17,12 @@ class CreateBookingsTable extends Migration
             $table->increments('id');
             $table->integer('id_user')->unsigned();
             $table->integer('id_driver')->unsigned();
+            $table->integer('price');
             $table->integer('total_seat');
             $table->integer('total_price');
-            $table->enum('status', ['0', '1'])->default('1');
+            $table->date('day');
+            $table->time('hour');
+            $table->enum('status', ['0', '1', '2'])->default('1');
             $table->timestamps();
 
             $table->foreign('id_driver')->references('id')->on('drivers')->onDelete('CASCADE');

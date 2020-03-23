@@ -5,6 +5,8 @@ namespace App\Http\Controllers\web\SuperAdmin;
 use App\Http\Controllers\Controller;
 use App\Travel;
 use Illuminate\Http\Request;
+use UxWeb\SweetAlert\SweetAlert;
+use Illuminate\Support\Facades\Session;
 
 class TravelController extends Controller
 {
@@ -55,7 +57,7 @@ class TravelController extends Controller
         $travel->business_name = $request->business_name;
         $travel->save();
 
-        return redirect()->route('travel.index')->with('create', 'Berhasil Menambahkan Data!');
+        return redirect()->route('travel.index')->with('create', 'Berhasil Menambahkan Data');
     }
 
     /**
@@ -114,7 +116,7 @@ class TravelController extends Controller
     public function destroy($id)
     {
         $data = Travel::find($id);
-        $data->delete();
+        $data->update(['status' => '0']);
         //Alert::success('Berhasill Menghapus Data!')->persistent('Confirm');
         return redirect()->route('travel.index')->with('delete', 'Berhasil Menghapus Data!');
     }

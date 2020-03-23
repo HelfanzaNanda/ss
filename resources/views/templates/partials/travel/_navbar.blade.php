@@ -30,14 +30,14 @@
                             <div class="avatar avatar-online">
                                 <img src="{{asset('assets/app-assets/images/portrait/small/avatar-s-1.png')}}" alt="avatar">
                             </div>
-                            <span class="user-name"></span>
+                            <span class="user-name">{{Auth::guard('travel')->user()->business_name}}</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="">
+                            <a class="dropdown-item" href="{{route('t-profile.index')}}">
                                 <i class="fa fa-user-circle-o"></i> Edit Profile
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#"><i class="fa fa-sign-out"></i>
+                            <a class="dropdown-item" href="{{route('travel.logout')}}"><i class="fa fa-sign-out"></i>
                                 Logout</a>
                         </div>
                     </li>

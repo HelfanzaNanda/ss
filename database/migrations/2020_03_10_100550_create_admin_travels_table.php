@@ -18,7 +18,7 @@ class CreateAdminTravelsTable extends Migration
             $table->string('license_number', '20')->unique();
             $table->string('business_owner', '30');
             $table->string('business_name', '30');
-            $table->string('jenis', '20');
+            $table->string('type', '20');
             $table->text('address');
             $table->string('email', '30')->unique();
             $table->timestamp('email_verified_at')->nullable();

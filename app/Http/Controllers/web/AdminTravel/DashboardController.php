@@ -41,7 +41,8 @@ class DashboardController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->file('aa');
+        $name = rand().'.'.$data->getClientOriginalExtension();
     }
 
     /**

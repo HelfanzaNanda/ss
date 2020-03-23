@@ -25,20 +25,16 @@
                             <div class="avatar avatar-online">
                                 <img src="{{asset('assets/app-assets/images/portrait/small/avatar-s-1.png')}}"
                                      alt="avatar"><i></i></div>
-                            <span class="user-name">aw</span></a>
+                            <span class="user-name">{{Auth::guard('superadmin')->user()->name}}</span></a>
                         <div class="dropdown-menu dropdown-menu-right">
                             <a class="dropdown-item" href="#"><i class="fa fa-user-circle-o"></i> Edit
                                 Profile</a>
                             <div class="dropdown-divider"></div>
 
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                            <a class="dropdown-item" href="{{ route('admin.logout') }}">
                                 <i class="fa fa-sign-out"></i>{{ __('Logout') }}
                             </a>
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
                         </div>
                     </li>
                 </ul>

@@ -727,7 +727,7 @@ function PickerConstructor( ELEMENT, NAME, COMPONENT, OPTIONS ) {
 
                         event.stopPropagation()
 
-                        // * For mousedown events, cancel the default action in order to
+                        // * For mousedown events, cancel the default action in booking to
                         //   prevent cases where focus is shifted onto external elements
                         //   when using things like jQuery mobile or MagnificPopup (ref: #249 & #120).
                         //   Also, for Firefox, don’t prevent action on the `option` element.

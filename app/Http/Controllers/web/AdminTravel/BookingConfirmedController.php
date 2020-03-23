@@ -2,19 +2,28 @@
 
 namespace App\Http\Controllers\web\AdminTravel;
 
+use App\Booking;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class BookingController extends Controller
+class BookingConfirmedController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth:travel');
+    }
+
     public function index()
     {
-        //
+
+        $datas = Booking::all()->where('status', '2');
+        return view('pages.travel.booking.confirmed.index', compact('datas'));
     }
 
     /**
@@ -67,9 +76,11 @@ class BookingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id)
     {
-        //
+        $data = Booking::findOrFail($id);
+        $data->update(['status' => '2']);
+        return redirect()->route('booking-notconfirmed.index')->with('update', 'Berhasil Mengkonfirmasi Pesanan');
     }
 
     /**
@@ -80,6 +91,8 @@ class BookingController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Booking::findOrFail($id);
+        $data->update(['status' => '0']);
+        return redirect()->route('booking-notconfirmed.index')->with('update', 'Berhasil Menolak Pesanan');
     }
 }

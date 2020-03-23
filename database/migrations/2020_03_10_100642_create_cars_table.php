@@ -15,16 +15,16 @@ class CreateCarsTable extends Migration
     {
         Schema::create('cars', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_driver')->unsigned();
-            $table->integer('number_plate')->unique();
+            $table->string('number_plate', '11')->unique();
+            $table->string('name', '30');
             $table->string('from', '30');
             $table->string('to', '30');
             $table->integer('price');
             $table->text('picture_travel')->nullable();
             $table->integer('seat');
+            $table->string('facility', '50');
+            $table->enum('status', ['0', '1'])->default('1');
             $table->timestamps();
-
-            $table->foreign('id_driver')->references('id')->on('drivers')->onDelete('CASCADE');
         });
     }
 

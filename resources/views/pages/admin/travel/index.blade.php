@@ -43,7 +43,7 @@
                         </div>
                         <div class="card-content collapse show">
                             <div class="card-body card-dashboard">
-                                <table class="table table-striped table-bordered">
+                                <table class="table table-striped table-bordered base-style">
                                     <thead>
                                     <tr>
                                         <th>No</th>
@@ -61,14 +61,9 @@
                                             <td>{{$data->business_owner}}</td>
                                             <td>{{$data->business_name}}</td>
                                             <td align="center">
-                                                <a href="{{route('travel.edit', $data->id)}}"
-                                                   class="btn btn-warning btn-sm">Edit</a>
-                                                <form class="delete-confirm" id="form-delete"
-                                                      action="travel/{{$data->id}}" method="post">
-                                                    {{csrf_field()}}
-                                                    {{method_field('DELETE')}}
-                                                    <button class="btn btn-sm btn-danger" type="submit">Delete</button>
-                                                </form>
+                                                <a href="{{route('travel.edit', $data->id)}}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
+                                                <a href="{{route('travel.destroy', $data->id)}}" onclick="return confirm('Apakah anda yakin akan mmenghapus data ini?')"
+                                                   class="btn btn-danger btn-sm"><i class="fa fa-remove"></i></a>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -82,4 +77,3 @@
         </section>
     </div>
 @endsection
-

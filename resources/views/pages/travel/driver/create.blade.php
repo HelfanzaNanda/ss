@@ -1,4 +1,4 @@
-@extends('templates.admin')
+@extends('templates.travel')
 @section('content')
     <section id="basic-form-layouts">
         <div class="row match-height">
@@ -10,44 +10,72 @@
                     </div>
                     <div class="card-content collapse show">
                         <div class="card-body">
-                            <form class="form" method="post" action="{{route('driver.store')}}">
+                            <form class="form" method="post" action="{{route('driver.store')}}" enctype="multipart/form-data">
                                 {{csrf_field()}}
                                 <div class="form-body">
                                     <div class="row">
                                         <div class="col-md-6">
+
                                             <div class="form-group">
-                                                <label for="projectinput1">License Number</label>
-                                                <input type="text" class="form-control {{$errors->has('number_plate')?'is-invalid':''}}"
-                                                       placeholder="Plat Nomor" name="number_plate" value="{{old('number_plate')}}">
-                                                @if ($errors->has('number_plate'))
+                                                <label for="projectinput2">NIK</label>
+                                                <input type="number"
+                                                       class="form-control {{$errors->has('nik')?'is-invalid':''}}"
+                                                       placeholder="NIK" name="nik" value="{{old('nik')}}">
+                                                @if ($errors->has('nik'))
                                                     <span class="invalid-feedback" role="alert">
-                                                        <p><b>{{ $errors->first('number_plate') }}</b></p>
+                                                        <p><b>{{ $errors->first('nik') }}</b></p>
                                                     </span>
                                                 @endif
                                             </div>
+
+                                            <div class="form-group">
+                                                <label for="projectinput2">No SIM</label>
+                                                <input type="number"
+                                                       class="form-control {{$errors->has('number_sim')?'is-invalid':''}}"
+                                                       placeholder="No SIM" name="number_sim"
+                                                       value="{{old('number_sim')}}">
+                                                @if ($errors->has('number_sim'))
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <p><b>{{ $errors->first('number_sim') }}</b></p>
+                                                    </span>
+                                                @endif
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="projectinput2">Mobil</label>
+                                                <select name="id_car" class="form-control">
+                                                    @foreach($datas as $data)
+                                                        <option value="{{$data->id}}">{{$data->name}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+
+
                                             <div class="form-group">
                                                 <label for="projectinput2">Nama</label>
-                                                <input type="text" class="form-control {{$errors->has('nama')?'is-invalid':''}}"
-                                                       placeholder="Nama" name="nama" value="{{old('nama')}}">
-                                                @if ($errors->has('nama'))
+                                                <input type="text"
+                                                       class="form-control {{$errors->has('name')?'is-invalid':''}}"
+                                                       placeholder="Nama" name="name" value="{{old('name')}}">
+                                                @if ($errors->has('name'))
                                                     <span class="invalid-feedback" role="alert">
-                                                        <p><b>{{ $errors->first('nama') }}</b></p>
+                                                        <p><b>{{ $errors->first('name') }}</b></p>
                                                     </span>
                                                 @endif
                                             </div>
                                             <div class="form-group">
                                                 <label for="projectinput2">Jenis Kelamin</label>
-                                                <select class="form-control" name="jenis_kelamin">
-                                                    <option value="laki-laki">Laki-Laki</option>
-                                                    <option value="perempuan">Perempuan</option>
+                                                <select class="form-control" name="gender">
+                                                    <option value="m">Laki-Laki</option>
+                                                    <option value="f">Perempuan</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="projectinput3">E-mail</label>
-                                                <input type="text" class="form-control {{$errors->has('email')?'is-invalid':''}}"
-                                                       placeholder="E-mail" name="email" value="{{old('email')}}">
+                                                <input class="form-control {{$errors->has('email')?'is-invalid':''}} email-inputmask"
+                                                       id="email-mask" type="text" placeholder="Enter Email Address"
+                                                       name="email" value="{{old('email')}}"/>
                                                 @if ($errors->has('email'))
                                                     <span class="invalid-feedback" role="alert">
                                                         <p><b>{{ $errors->first('email') }}</b></p>
@@ -56,12 +84,39 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="projectinput3">Password</label>
-                                                <input type="password" class="form-control {{$errors->has('password')?'is-invalid':''}}"
-                                                       placeholder="Password" name="password" value="{{old('password')}}">
-                                                @if ($errors->has('password'))
+                                                <label for="projectinput3">Telephone</label>
+                                                <input type="number"
+                                                       class="form-control {{$errors->has('telephone')?'is-invalid':''}}"
+                                                       placeholder="Telephone" name="telephone"
+                                                       value="{{old('telephone')}}">
+                                                @if ($errors->has('telephone'))
                                                     <span class="invalid-feedback" role="alert">
-                                                        <p><b>{{ $errors->first('password') }}</b></p>
+                                                        <p><b>{{ $errors->first('telephone') }}</b></p>
+                                                    </span>
+                                                @endif
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="projectinput3">Alamat</label>
+                                                <textarea class="form-control {{$errors->has('address')?'is-invalid':''}}"
+                                                        name="address" rows="3" placeholder="Alamat">{{old('address')}}</textarea>
+                                                @if ($errors->has('address'))
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <p><b>{{ $errors->first('address') }}</b></p>
+                                                    </span>
+                                                @endif
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="projectinput3">Foto</label>
+                                                <input class="form-control {{$errors->has('path_avatar')?'is-invalid':''}}"
+                                                       type="file" name="path_avatar" value="{{old('path_avatar')}}"
+                                                onchange="loadfile(event)" id="foto">
+                                                <br/>
+                                                <img id="output" class="img-fluid" height="100" width="100" style="display: none">
+                                                @if ($errors->has('path_avatar'))
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <p><b>{{ $errors->first('path_avatar') }}</b></p>
                                                     </span>
                                                 @endif
                                             </div>
@@ -78,6 +133,7 @@
                                     </button>
                                 </div>
                             </form>
+
                         </div>
                     </div>
                 </div>
@@ -85,3 +141,14 @@
         </div>
     </section>
 @endsection
+
+<script>
+    var loadfile = function (event) {
+        var foto = document.getElementById('foto');
+        var output = document.getElementById('output');
+        if (foto && foto.value){
+            output.src = URL.createObjectURL(event.target.files[0]);
+            output.style.display = '';
+        }
+    };
+</script>

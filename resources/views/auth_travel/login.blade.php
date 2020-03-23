@@ -11,7 +11,7 @@
     <meta name="keywords"
           content="admin template, stack admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
-    <title>Login with Background Color - Stack Responsive Bootstrap 4 Admin Template</title>
+    <title>Login Travel</title>
     <link rel="apple-touch-icon" href="{{asset('assets/app-assets/images/ico/apple-icon-120.png')}}">
     <link rel="shortcut icon" type="image/x-icon"
           href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/images/ico/favicon.ico">
@@ -52,6 +52,12 @@
                     <div class="col-lg-4 col-md-8 col-10 box-shadow-2 p-0">
                         <div class="card border-grey border-lighten-3 m-0">
                             <div class="card-header border-0">
+                                @if($message = Session::get('error'))
+                                    <div class="alert alert-danger alert-dismissible mb-2" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                        {{$message}}
+                                    </div>
+                                @endif
                                 <div class="card-title text-center">
                                     <div class="p-1">
                                         <img src="{{asset('assets/app-assets/images/logo/stack-logo-dark.png')}}"
@@ -60,30 +66,31 @@
                                 </div>
                             </div>
                             <div class="card-content">
-                                <p class="card-subtitle line-on-side text-muted text-center font-small-3 mx-2"><span>OR Using
-                            Account Details</span></p>
+                                <p class="card-subtitle line-on-side text-muted text-center font-small-3 mx-2"><span>Login Travel</span></p>
                                 <div class="card-body pt-0">
                                     <form class="form-horizontal" action="{{route('travel.login.submit')}}"
                                           method="post">
                                         @csrf
                                         <fieldset class="form-group position-relative has-icon-left mb-1">
-                                            <label for="user-name">Your Username</label>
+
                                             <input type="text" class="form-control @error('email') is-invalid @enderror"
-                                                   name="email" value="{{ old('email') }}" required>
+                                                   name="email" value="{{ old('email') }}" required placeholder="Masukkan Email">
                                             @error('email')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                             @enderror
+
                                             <div class="form-control-position">
                                                 <i class="fa fa-user"></i>
                                             </div>
                                         </fieldset>
 
                                         <fieldset class="form-group position-relative has-icon-left">
-                                            <label for="user-password">Enter Password</label>
+
                                             <input type="password" name="password" required autocomplete="current-password"
-                                                   class="form-control @error('password') is-invalid @enderror">
+                                                   class="form-control @error('password') is-invalid @enderror"
+                                            placeholder="Masukkan Password">
                                             @error('password')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -104,8 +111,7 @@
                                         </button>
                                     </form>
                                 </div>
-                                <p class="card-subtitle line-on-side text-muted text-center font-small-3 mx-2 my-1"><span>New to
-                            Stack ?</span></p>
+                                <p class="card-subtitle line-on-side text-muted text-center font-small-3 mx-2 my-1"><span>Belum Punya Akun?</span></p>
                                 <div class="card-body">
                                     <a href="{{route('travel.register')}}" class="btn btn-outline-danger btn-block"><i
                                                 class="fa fa-registered"></i> Register</a>

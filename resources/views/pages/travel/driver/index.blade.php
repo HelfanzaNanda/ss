@@ -21,27 +21,61 @@
                         </div>
                         <div class="card-content collapse show">
                             <div class="card-body card-dashboard">
-                                <table class="table table-striped table-bordered dom-jQuery-events">
+                                <table class="table table-striped table-bordered base-style">
                                     <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Licemse Number</th>
-                                        <th>Bussines Owner</th>
-                                        <th>Bussines Name</th>
-                                        <th>Address</th>
+                                        <th>Foto</th>
+                                        <th>Nama</th>
+                                        <th>Mobil</th>
+                                        <th>Email</th>
                                         <th>Telephone</th>
                                         <th>Action</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-
+                                    @foreach($datas as $data)
                                         <tr>
+                                            <td>{{$loop->iteration}}</td>
+                                            <td><a class="avatar bg-danger" data-toggle="modal" data-target="#default{{$loop->iteration}}" type="button">
+                                                    <img src="{{asset('uploads/travel/driver/'.$data->path_avatar)}}" width="40" height="40">
+                                                </a>
+                                            </td>
+                                            <td>{{$data->name}}</td>
+                                            <td>{{$data->car->name}}</td>
+                                            <td>{{$data->email}}</td>
+                                            <td>{{$data->telephone}}</td>
                                             <td>
-                                                <a href="#" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
-                                                <a href="" class="btn btn-danger btn-sm"><i class="fa fa-remove"></i></a>
+                                                <a href="{{route('driver.show', $data->id)}}" class="btn btn-info btn-sm"><i
+                                                            class="fa fa-eye"></i></a>
+                                                <a href="{{route('driver.edit', $data->id)}}" class="btn btn-warning btn-sm"><i
+                                                            class="fa fa-edit"></i></a>
+                                                <a href="{{route('driver.destroy', $data->id)}}" onclick="return confirm('apakah anda yakin ingin menghapus data ini?')"
+                                                   class="btn btn-danger btn-sm">
+                                                    <i class="fa fa-remove"></i></a>
                                             </td>
                                         </tr>
 
+                                        <div class="modal fade text-left" id="default{{$loop->iteration}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h4 class="modal-title" id="myModalLabel1">Image</h4>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="d-flex justify-content-center">
+                                                            <img src="{{asset('uploads/travel/driver/'.$data->path_avatar)}}" style="height: 480px; width: 480px;" >
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -51,4 +85,5 @@
             </div>
         </section>
     </div>
+
 @endsection

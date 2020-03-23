@@ -8,8 +8,8 @@
     <meta name="description" content="Stack admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
     <meta name="keywords" content="admin template, stack admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
-    <title>Register with Background Color - Stack Responsive Bootstrap 4 Admin Template</title>
-    <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
+    <title>Register Travel</title>
+    <link rel="apple-touch-icon" href="{{asset('assets/app-assets/images/ico/apple-icon-120.png')}}">
     <link rel="shortcut icon" type="image/x-icon" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/images/ico/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i%7COpen+Sans:300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
 
@@ -51,7 +51,7 @@
                             Email</span></p>
                                 <div class="card-body pt-0">
                                     @csrf
-                                    <form class="form-horizontal" action="{{route('travel.register.submit')}}" method="post" enctype="multipart/form-data">
+                                    <form class="form-horizontal" action="{{route('travel.register.submit')}}" method="post">
                                         @csrf
                                         @if($message = Session::get('error'))
                                             <div class="alert alert-danger alert-dismissible mb-2" role="alert">
@@ -75,7 +75,7 @@
                                                 <fieldset class="form-group floating-label-form-group">
                                                     <label for="user-name">Nama Pemilik</label>
                                                     <input type="text" class="form-control {{$errors->has('business_owner')?'is-invalid':''}}"
-                                                           placeholder="Masukkan Nomor License Anda" name="business_owner">
+                                                           placeholder="Masukkan Nama Pemilik Usaha" name="business_owner">
                                                     @if ($errors->has('business_owner'))
                                                         <span class="invalid-feedback" role="alert">
                                                         <p><b>{{ $errors->first('business_owner')}}</b></p>
@@ -86,7 +86,7 @@
                                                 <fieldset class="form-group floating-label-form-group">
                                                     <label for="user-name">Nama Usaha</label>
                                                     <input type="text" class="form-control {{$errors->has('business_name')?'is-invalid':''}}"
-                                                           placeholder="Masukkan Nomor License Anda" name="business_name">
+                                                           placeholder="Masukkan Nama Usaha" name="business_name">
                                                     @if ($errors->has('business_name'))
                                                         <span class="invalid-feedback" role="alert">
                                                         <p><b>{{ $errors->first('business_name')}}</b></p>
@@ -110,7 +110,7 @@
                                                 <fieldset class="form-group floating-label-form-group">
                                                     <label for="user-email">Your Email Address</label>
                                                     <input type="email" class="form-control {{$errors->has('email')?'is-invalid':''}}"
-                                                           placeholder="Your Email Address" name="email">
+                                                           placeholder="Masukkan Email" name="email">
                                                     @if ($errors->has('email'))
                                                         <span class="invalid-feedback" role="alert">
                                                         <p><b>{{ $errors->first('email')}}</b></p>
@@ -120,7 +120,7 @@
                                                 <fieldset class="form-group floating-label-form-group mb-1">
                                                     <label for="user-password">Enter Password</label>
                                                     <input type="password" class="form-control {{$errors->has('password')?'is-invalid':''}}"
-                                                           placeholder="Enter Password" name="password">
+                                                           placeholder="Masukkan Password" name="password">
                                                     @if ($errors->has('password'))
                                                         <span class="invalid-feedback" role="alert">
                                                         <p><b>{{ $errors->first('password')}}</b></p>
@@ -130,25 +130,21 @@
                                                 <fieldset class="form-group floating-label-form-group mb-1">
                                                     <label for="user-password">Repeat Enter Password</label>
                                                     <input type="password" class="form-control" name="password_confirmation"
-                                                           placeholder="Enter Password">
+                                                           placeholder="Masukkan Password Lagi">
                                                 </fieldset>
 
-                                                <fieldset class="form-group floating-label-form-group">
-                                                    <label for="user-name">Nama Usaha</label>
-
-                                                    <div class="form-group">
-                                                        <label for="sel1">Jenis Travel:</label>
-                                                        <select class="form-control" name="jenis">
-                                                            <option value="wisata">Wisata</option>
-                                                            <option value="perhari">Perhari</option>
-                                                        </select>
-                                                    </div>
+                                                <fieldset class="form-group floating-label-form-group mb-1">
+                                                    <label for="sel1">Jenis Travel:</label>
+                                                    <select class="form-control" name="type">
+                                                        <option value="wisata">Wisata</option>
+                                                        <option value="perhari">Perhari</option>
+                                                    </select>
                                                 </fieldset>
 
                                                 <fieldset class="form-group floating-label-form-group mb-1">
                                                     <label for="user-password">No Hp</label>
                                                     <input type="number" class="form-control {{$errors->has('telephone')?'is-invalid':''}}"
-                                                           placeholder="Enter Number Phone" name="telephone">
+                                                           placeholder="Masukkan Nomor Handphone" name="telephone">
                                                     @if ($errors->has('telephone'))
                                                         <span class="invalid-feedback" role="alert">
                                                         <p><b>{{ $errors->first('telephone')}}</b></p>
@@ -159,7 +155,6 @@
                                             <div class="col-sm-6 col-12 text-center text-sm-left pr-0">
                                             </div>
                                             <div class="col-sm-6 col-12 float-sm-left text-center text-sm-right">
-                                                <a href="#" class="card-link">Forgot Password?</a>
                                                 <a href="{{route('travel.login')}}" class="card-link">Login</a>
                                             </div>
                                         </div>

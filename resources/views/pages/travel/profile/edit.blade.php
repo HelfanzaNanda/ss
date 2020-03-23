@@ -35,16 +35,15 @@
                                             <div class="form-group">
                                                 <div class="controls">
                                                     <label>License Number</label>
-                                                    <input type="text" class="form-control" readonly value="">
+                                                    <input type="text" class="form-control" readonly value="{{Auth::guard('travel')->user()->license_number}}">
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <div class="controls">
                                                     <label>Pemilik Usaha</label>
-                                                    <input type="text" class="form-control" placeholder="Name"
-                                                           value="Dean Stanley" required
-                                                           data-validation-required-message="This name field is required">
+                                                    <input type="text" class="form-control"
+                                                           value="{{Auth::guard('travel')->user()->business_owner}}" required>
                                                 </div>
                                             </div>
 
@@ -52,16 +51,25 @@
                                                 <div class="controls">
                                                     <label>Nama Usaha</label>
                                                     <input type="text" class="form-control"
-                                                           value="">
+                                                           value="{{Auth::guard('travel')->user()->business_name}}">
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <div class="controls">
                                                     <label>E-mail</label>
-                                                    <input type="email" class="form-control" placeholder="Email"
-                                                           value="deanstanley@gmail.com" required
-                                                           data-validation-required-message="This email field is required">
+                                                    <input type="email" class="form-control" readonly
+                                                           value="{{Auth::guard('travel')->user()->email}}">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="controls">
+                                                    <label>Jenis Travel</label>
+                                                    <select name="" class="form-control">
+                                                        <option value="wisata" @if(Auth::guard('travel')->user()->type == 'wisata'){{"selected"}} @endif>Wisata</option>
+                                                        <option value="perhari"@if(Auth::guard('travel')->user()->type == 'perhari') {{"selected"}} @endif>Perhari</option>
+                                                    </select>
                                                 </div>
                                             </div>
 
@@ -75,11 +83,11 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>Telephone</label>
-                                                <input type="number" class="form-control" placeholder="Company name">
+                                                <input type="number" class="form-control" value="{{Auth::guard('travel')->user()->telephone}}">
                                             </div>
                                             <div class="form-group">
                                                 <label>Alamat</label>
-                                                <textarea class="form-control" rows="4"></textarea>
+                                                <textarea class="form-control" rows="4">{{Auth::guard('travel')->user()->address}}</textarea>
                                             </div>
                                         </div>
                                         <div class="col-12 d-flex flex-sm-row flex-column justify-content-end mt-1">

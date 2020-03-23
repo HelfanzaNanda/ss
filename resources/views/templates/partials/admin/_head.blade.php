@@ -12,10 +12,7 @@
 
     <link rel="stylesheet" type="text/css" href="{{asset('assets/app-assets/vendors/css/vendors.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/app-assets/vendors/css/animate/animate.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/app-assets/vendors/css/extensions/sweetalert2.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/app-assets/vendors/css/tables/datatable/datatables.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/app-assets/vendors/css/charts/jquery-jvectormap-2.0.3.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/app-assets/vendors/css/charts/morris.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/app-assets/vendors/css/extensions/unslider.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/app-assets/vendors/css/weather-icons/climacons.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/app-assets/css/bootstrap.min.css')}}">
@@ -25,4 +22,5 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/app-assets/css/core/menu/menu-types/vertical-menu.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/app-assets/css/core/colors/palette-gradient.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/assets/css/style.css')}}">
+
 </head>

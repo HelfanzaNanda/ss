@@ -45,13 +45,13 @@ class RegisterController extends Controller
     public function store (Request $request)
     {
         $this->validate($request,[
-            'license_number' => 'required',
-            'business_owner' => 'required',
-            'business_name' => 'required',
-            'address' => 'required',
-            'email' => 'required|unique:admin_travels',
-            'password' => 'required|confirmed',
-            'telephone' => 'required',
+            'license_number'    => 'required|unique:admin_travels',
+            'business_owner'    => 'required',
+            'business_name'     => 'required',
+            'address'           => 'required',
+            'email'             => 'required|unique:admin_travels',
+            'password'          => 'required|confirmed',
+            'telephone'         => 'required',
         ]);
 
         $a = Travel::all()->where('license_number', '=', $request->license_number)->toArray();
@@ -60,10 +60,10 @@ class RegisterController extends Controller
             $data->license_number = $request->license_number;
             $data->business_owner = $request->business_owner;
             $data->business_name = $request->business_name;
-            $data->jenis = $request->jenis;
+            $data->type = $request->type;
             $data->address = $request->address;
             $data->email = $request->email;
-            $data->password = bcrypt($request->password);
+            $data->password = Hash::make($request->password);
             $data->telephone = $request->telephone;
             //dd($request->all());
             $data->save();

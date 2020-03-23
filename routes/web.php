@@ -21,30 +21,44 @@ Route::get('/', function () {
     return view('templates.travel');
 });*/
 
-Route::get('/admin-login', 'web\SuperAdmin\Auth\LoginController@showLoginForm')->name('admin.login');
-Route::post('/admin-login', 'web\SuperAdmin\Auth\LoginController@login')->name('admin.login.submit');
-Route::get('/admin-register', 'web\SuperAdmin\Auth\RegisterController@showRegisterForm')->name('admin.register');
-Route::post('/admin-register', 'web\SuperAdmin\Auth\RegisterController@store')->name('admin.register.submit');
-Route::get('/admin-logout', 'web\SuperAdmin\Auth\LoginController@logout')->name('admin.logout');
+Route::get('/admin/login', 'web\SuperAdmin\Auth\LoginController@showLoginForm')->name('admin.login');
+Route::post('/admin/login', 'web\SuperAdmin\Auth\LoginController@login')->name('admin.login.submit');
+Route::get('/admin/register', 'web\SuperAdmin\Auth\RegisterController@showRegisterForm')->name('admin.register');
+Route::post('/admin/register', 'web\SuperAdmin\Auth\RegisterController@store')->name('admin.register.submit');
+Route::get('/admin/logout', 'web\SuperAdmin\Auth\LoginController@logout')->name('admin.logout');
 
-Route::get('/travel-login', 'web\AdminTravel\Auth\LoginController@showLoginForm')->name('travel.login');
-Route::post('/travel-login', 'web\AdminTravel\Auth\LoginController@login')->name('travel.login.submit');
-Route::get('/travel-register', 'web\AdminTravel\Auth\RegisterController@showRegisterForm')->name('travel.register');
-Route::post('/travel-register', 'web\AdminTravel\Auth\RegisterController@store')->name('travel.register.submit');
-Route::get('/travel-logout', 'web\AdminTravel\Auth\LoginController@logout')->name('travel.logout');
+Route::get('/travel/login', 'web\AdminTravel\Auth\LoginController@showLoginForm')->name('travel.login');
+Route::post('/travel/login', 'web\AdminTravel\Auth\LoginController@login')->name('travel.login.submit');
+Route::get('/travel/register', 'web\AdminTravel\Auth\RegisterController@showRegisterForm')->name('travel.register');
+Route::post('/travel/register', 'web\AdminTravel\Auth\RegisterController@store')->name('travel.register.submit');
+Route::get('/travel/logout', 'web\AdminTravel\Auth\LoginController@logout')->name('travel.logout');
 
 
 Route::group(['prefix' => 'admin'], function () {
     Route::resource('adashboard', 'web\SuperAdmin\DashboardController');
-    Route::resource('travel', 'web\SuperAdmin\TravelController');
+    Route::resource('travel', 'web\SuperAdmin\TravelController')->except(['show', 'destroy']);
+    Route::get('travel/{travel}', 'web\SuperAdmin\TravelController@destroy')->name('travel.destroy');
     Route::resource('admintravel','web\SuperAdmin\AdminTravelController');
+    Route::resource('notifikasi','web\SuperAdmin\NotifikasiController')->only('index');
+    Route::get('notifikasi/{notifikasi}', 'web\SuperAdmin\NotifikasiController@update')->name('notifikasi.update');
+    Route::get('notifikasi/{notifikasi}/destroy', 'web\SuperAdmin\NotifikasiController@destroy')->name('notifikasi.destroy');
 });
 
 Route::group(['prefix' => 'travel'], function (){
     Route::resource('tdashboard', 'web\AdminTravel\DashboardController');
-    Route::resource('driver', 'web\AdminTravel\DriverController');
+    Route::resource('driver', 'web\AdminTravel\DriverController')->except('destroy');
+    Route::get('driver/{driver}/destroy', 'web\AdminTravel\DriverController@destroy')->name('driver.destroy');
+    Route::resource('car', 'web\AdminTravel\CarController')->except('destroy');
+    Route::get('car/{driver}/car', 'web\AdminTravel\CarController@destroy')->name('car.destroy');
+    Route::resource('booking-notconfirmed', 'web\AdminTravel\BookingNotConfirmedController')->only(['index', 'show']);
+    Route::get('booking-notconfirmed/{booking_notconfirmed}/update', 'web\AdminTravel\BookingNotConfirmedController@update')->name('booking-notconfirmed.update');
+    Route::get('booking-notconfirmed/{booking_notconfirmed}/destroy', 'web\AdminTravel\BookingNotConfirmedController@destroy')->name('booking-notconfirmed.destroy');
+    Route::resource('booking-confirmed', 'web\AdminTravel\BookingConfirmedController')->only('index');
+    Route::resource('t-profile', 'web\AdminTravel\ProfileController')->only(['index', 'create', 'store']);
+
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+

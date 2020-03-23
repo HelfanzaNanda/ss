@@ -22,7 +22,7 @@ class AdminTravelController extends Controller
 
     public function index()
     {
-        $datas = AdminTravel::all()->where('deleted', '1');
+        $datas = AdminTravel::all()->where('status', '2');
         return view('pages.admin.admin_travel.index', compact('datas'));
     }
 
@@ -76,9 +76,9 @@ class AdminTravelController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($id)
     {
-        //
+
     }
 
     /**

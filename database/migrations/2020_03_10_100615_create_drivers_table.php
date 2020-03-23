@@ -15,12 +15,18 @@ class CreateDriversTable extends Migration
     {
         Schema::create('drivers', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('id_car')->unsigned();
+            $table->char('nik','16')->unique();
+            $table->char('number_sim', '16')->unique();
             $table->string('name', '50');
-            $table->enum('jenis_kelamin', ['laki-laki', 'perempuan']);
+            $table->enum('gender', ['m', 'f']);
             $table->string('email', '30')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->text('password');
             $table->text('path_avatar')->nullable();
+            $table->text('address');
+            $table->string('telephone', '13');
+            $table->text('api_token');
             $table->rememberToken();
             $table->enum('status', ['0', '1'])->default('1');
             $table->timestamps();

@@ -22,6 +22,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->text('path_avatar')->nullable();
             $table->rememberToken();
+            $table->boolean('active')->default(false);
+            $table->string('activation_token')->nullable();
             $table->timestamps();
         });
     }

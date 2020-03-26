@@ -16,7 +16,7 @@ class SuperAdmin extends Authenticatable
      * @var array
      */
 
-    protected $guard = 'superadmin';
+    protected $guard = ' superadmin';
     protected $table = 'super_admins';
     protected $fillable = [
         'name', 'email', 'password','path_avatar'

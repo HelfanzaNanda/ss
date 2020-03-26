@@ -26,7 +26,8 @@ class CreateAdminTravelsTable extends Migration
             $table->rememberToken();
             $table->text('path_avatar')->nullable();
             $table->string('telephone', '13');
-            $table->enum('status', ['0', '1', '2'])->default('1');
+            $table->enum('active', ['0', '1', '2'])->default('1');
+            $table->string('activation_token')->nullable();
             $table->timestamps();
         });
     }

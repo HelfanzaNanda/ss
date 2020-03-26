@@ -29,7 +29,10 @@ class RedirectIfAuthenticated
 
             case 'travel':
                 if (Auth::guard($guard)->check()){
-                    return redirect()->route('tdashboard.index');
+                    $user = Auth::guard($guard)->user();
+                    if ($user->active =='2'){
+                        return redirect()->route('tdashboard.index');
+                    }
                 }
                 break;
 

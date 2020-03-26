@@ -58,6 +58,13 @@
                                         {{$message}}
                                     </div>
                                 @endif
+
+                                    @if($message = Session::get('success'))
+                                        <div class="alert alert-danger alert-dismissible mb-2" role="alert">
+                                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                            {{$message}}
+                                        </div>
+                                    @endif
                                 <div class="card-title text-center">
                                     <div class="p-1">
                                         <img src="{{asset('assets/app-assets/images/logo/stack-logo-dark.png')}}"
@@ -68,8 +75,7 @@
                             <div class="card-content">
                                 <p class="card-subtitle line-on-side text-muted text-center font-small-3 mx-2"><span>Login Travel</span></p>
                                 <div class="card-body pt-0">
-                                    <form class="form-horizontal" action="{{route('travel.login.submit')}}"
-                                          method="post">
+                                    <form class="form-horizontal" action="{{route('travel.login.submit')}}" method="post">
                                         @csrf
                                         <fieldset class="form-group position-relative has-icon-left mb-1">
 
@@ -104,7 +110,7 @@
                                         <div class="form-group row">
                                             <div class="col-sm-6 col-12 text-center text-sm-left"></div>
                                             <div class="col-sm-6 col-12 float-sm-left text-center text-sm-right"><a
-                                                        href="#" class="card-link">Forgot Password?</a></div>
+                                                        href="{{route('travel.password.request')}}" class="card-link">Forgot Password?</a></div>
                                         </div>
                                         <button type="submit" class="btn btn-outline-primary btn-block"><i
                                                     class="fa fa-unlock"></i> Login

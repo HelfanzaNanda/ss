@@ -1,11 +1,21 @@
 @extends('templates.travel')
 @section('content')
     <div class="content-header row">
+
+        @if($message = Session::get('success'))
+            <div class="alert alert-success alert-dismissible mb-2" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                {{$message}}
+            </div>
+        @endif
+
         <div class="content-header-left col-md-6 col-12 mb-2">
             <h3 class="content-header-title mb-0">Data Travel</h3>
         </div>
     </div>
     <div class="content-body">
+
+
         <!--stats-->
         <div class="row">
             <div class="col-xl-3 col-lg-6 col-12">

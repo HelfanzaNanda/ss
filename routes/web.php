@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,17 +22,26 @@ Route::get('/', function () {
     return view('templates.travel');
 });*/
 
+Auth::routes();
+
+//Auth Admin
 Route::get('/admin/login', 'web\SuperAdmin\Auth\LoginController@showLoginForm')->name('admin.login');
 Route::post('/admin/login', 'web\SuperAdmin\Auth\LoginController@login')->name('admin.login.submit');
 Route::get('/admin/register', 'web\SuperAdmin\Auth\RegisterController@showRegisterForm')->name('admin.register');
 Route::post('/admin/register', 'web\SuperAdmin\Auth\RegisterController@store')->name('admin.register.submit');
 Route::get('/admin/logout', 'web\SuperAdmin\Auth\LoginController@logout')->name('admin.logout');
 
+//Auth Travel
 Route::get('/travel/login', 'web\AdminTravel\Auth\LoginController@showLoginForm')->name('travel.login');
 Route::post('/travel/login', 'web\AdminTravel\Auth\LoginController@login')->name('travel.login.submit');
 Route::get('/travel/register', 'web\AdminTravel\Auth\RegisterController@showRegisterForm')->name('travel.register');
 Route::post('/travel/register', 'web\AdminTravel\Auth\RegisterController@store')->name('travel.register.submit');
 Route::get('/travel/logout', 'web\AdminTravel\Auth\LoginController@logout')->name('travel.logout');
+Route::get('/travel/activate', 'web\AdminTravel\Auth\ActivationController@activate')->name('travel.activate');
+Route::get('/travel/password/reset', 'web\AdminTravel\Auth\ForgotPasswordController@showLinkRequestForm')->name('travel.password.request');
+Route::post('/travel/password/email', 'web\AdminTravel\Auth\ForgotPasswordController@sendResetLinkEmail')->name('travel.password.email');
+Route::get('/travel/password/reset/{token}', 'web\AdminTravel\Auth\ResetPasswordController@showResetForm')->name('travel.password.reset');
+Route::post('/travel/password/reset', 'web\AdminTravel\Auth\ResetPasswordController@reset')->name('travel.password.reset.submit');
 
 
 Route::group(['prefix' => 'admin'], function () {
@@ -57,8 +67,6 @@ Route::group(['prefix' => 'travel'], function (){
     Route::resource('t-profile', 'web\AdminTravel\ProfileController')->only(['index', 'create', 'store']);
 
 });
-
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 

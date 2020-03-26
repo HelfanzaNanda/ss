@@ -15,6 +15,7 @@ class AddFkDriver extends Migration
     {
         Schema::table('drivers', function (Blueprint $table) {
             $table->foreign('id_car')->references('id')->on('cars')->onDelete('CASCADE');
+            $table->foreign('id_travel')->references('id')->on('admin_travels')->onDelete('CASCADE');
         });
     }
 

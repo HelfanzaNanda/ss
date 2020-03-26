@@ -2,23 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="42e660d4-05ff-4435-b513-e4c398a519c6" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/AdminTravel.php" afterPath="$PROJECT_DIR$/app/AdminTravel.php" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/web/AdminTravel/Auth/ForgotPasswordController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/web/AdminTravel/Auth/ForgotPasswordController.php" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/web/AdminTravel/Auth/LoginController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/web/AdminTravel/Auth/LoginController.php" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/web/AdminTravel/Auth/RegisterController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/web/AdminTravel/Auth/RegisterController.php" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/web/AdminTravel/Auth/ResetPasswordController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/web/AdminTravel/Auth/ResetPasswordController.php" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" />
-      <change beforePath="$PROJECT_DIR$/app/SuperAdmin.php" afterPath="$PROJECT_DIR$/app/SuperAdmin.php" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_10_100550_create_admin_travels_table.php" afterPath="$PROJECT_DIR$/database/migrations/2020_03_10_100550_create_admin_travels_table.php" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth_superadmin/passwords/reset.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth_superadmin/passwords/reset.blade.php" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth_travel/login.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth_travel/login.blade.php" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth_travel/passwords/email.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth_travel/passwords/email.blade.php" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth_travel/passwords/reset.blade.php" afterPath="$PROJECT_DIR$/resources/views/auth_travel/passwords/reset.blade.php" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/travel/dashboard.blade.php" afterPath="$PROJECT_DIR$/resources/views/pages/travel/dashboard.blade.php" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_10_100615_create_drivers_table.php" afterPath="$PROJECT_DIR$/database/migrations/2020_03_10_100615_create_drivers_table.php" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_10_100642_create_cars_table.php" afterPath="$PROJECT_DIR$/database/migrations/2020_03_10_100642_create_cars_table.php" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_10_100659_create_bookings_table.php" afterPath="$PROJECT_DIR$/database/migrations/2020_03_10_100659_create_bookings_table.php" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_03_17_062048_add_fk_driver.php" afterPath="$PROJECT_DIR$/database/migrations/2020_03_17_062048_add_fk_driver.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,186 +19,102 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ForgotPasswordController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/web/AdminTravel/Auth/ForgotPasswordController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="55" column="5" lean-forward="false" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".env" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".env" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.env">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="32" column="14" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="14" />
+            <state relative-caret-position="136">
+              <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reset.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/auth_travel/passwords/reset.blade.php">
+      <file leaf-file-name="CarController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/web/AdminTravel/CarController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
-              <caret line="52" column="95" lean-forward="false" selection-start-line="52" selection-start-column="95" selection-end-line="52" selection-end-column="95" />
-              <folding>
-                <marker date="1585202447208" expanded="true" signature="721:777" ph="..." />
-                <marker date="1585202447208" expanded="true" signature="1183:1237" ph="..." />
-                <marker date="1585202447208" expanded="true" signature="1293:1341" ph="..." />
-                <marker date="1585202447208" expanded="true" signature="1397:1454" ph="..." />
-                <marker date="1585202447208" expanded="true" signature="1510:1555" ph="..." />
-                <marker date="1585202447208" expanded="true" signature="1611:1660" ph="..." />
-                <marker date="1585202447208" expanded="true" signature="1716:1783" ph="..." />
-                <marker date="1585202447208" expanded="true" signature="1839:1875" ph="..." />
-                <marker date="1585202447208" expanded="true" signature="2859:2917" ph="..." />
-                <marker date="1585202447208" expanded="true" signature="3404:3441" ph="..." />
-                <marker date="1585202447208" expanded="true" signature="3590:3598" ph="..." />
-                <marker date="1585202447208" expanded="true" signature="3888:3902" ph="..." />
-                <marker date="1585202447208" expanded="true" signature="4225:4235" ph="..." />
-                <marker date="1585202447208" expanded="true" signature="4906:4923" ph="..." />
-                <marker date="1585202447208" expanded="true" signature="5255:5265" ph="..." />
-                <marker date="1585202447208" expanded="true" signature="6726:6778" ph="..." />
-                <marker date="1585202447208" expanded="true" signature="6807:6886" ph="..." />
-                <marker date="1585202447208" expanded="true" signature="6915:6965" ph="..." />
-                <marker date="1585202447208" expanded="true" signature="6994:7039" ph="..." />
-                <marker date="1585202447208" expanded="true" signature="7068:7138" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="email.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/auth_travel/passwords/email.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="53" column="99" lean-forward="false" selection-start-line="53" selection-start-column="99" selection-end-line="53" selection-end-column="99" />
-              <folding>
-                <marker date="1585139565151" expanded="true" signature="721:777" ph="..." />
-                <marker date="1585139565151" expanded="true" signature="1183:1237" ph="..." />
-                <marker date="1585139565151" expanded="true" signature="1293:1341" ph="..." />
-                <marker date="1585139565151" expanded="true" signature="1397:1454" ph="..." />
-                <marker date="1585139565151" expanded="true" signature="1510:1555" ph="..." />
-                <marker date="1585139565151" expanded="true" signature="1611:1660" ph="..." />
-                <marker date="1585139565151" expanded="true" signature="1716:1783" ph="..." />
-                <marker date="1585139565151" expanded="true" signature="1839:1875" ph="..." />
-                <marker date="1585139565151" expanded="true" signature="2859:2917" ph="..." />
-                <marker date="1585139565151" expanded="true" signature="3404:3434" ph="..." />
-                <marker date="1585139565151" expanded="true" signature="3732:3746" ph="..." />
-                <marker date="1585139565151" expanded="true" signature="4072:4082" ph="..." />
-                <marker date="1585139565151" expanded="true" signature="4966:5018" ph="..." />
-                <marker date="1585139565151" expanded="true" signature="5047:5126" ph="..." />
-                <marker date="1585139565151" expanded="true" signature="5155:5205" ph="..." />
-                <marker date="1585139565151" expanded="true" signature="5234:5279" ph="..." />
-                <marker date="1585139565151" expanded="true" signature="5308:5378" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResetPasswordController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/web/AdminTravel/Auth/ResetPasswordController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="35" column="46" lean-forward="false" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="46" />
-              <folding>
-                <element signature="e#61#81#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="login.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-629">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <marker date="1583480229353" expanded="true" signature="1289:1343" ph="..." />
-                <marker date="1583480229353" expanded="true" signature="1399:1461" ph="..." />
-                <marker date="1583480229353" expanded="true" signature="1517:1579" ph="..." />
-                <marker date="1583480229353" expanded="true" signature="1635:1683" ph="..." />
-                <marker date="1583480229353" expanded="true" signature="1739:1796" ph="..." />
-                <marker date="1583480229353" expanded="true" signature="1852:1897" ph="..." />
-                <marker date="1583480229353" expanded="true" signature="1953:2002" ph="..." />
-                <marker date="1583480229353" expanded="true" signature="2068:2141" ph="..." />
-                <marker date="1583480229353" expanded="true" signature="2207:2274" ph="..." />
-                <marker date="1583480229353" expanded="true" signature="2330:2389" ph="..." />
-                <marker date="1583480229353" expanded="true" signature="2445:2481" ph="..." />
-                <marker date="1583480229353" expanded="true" signature="3732:3748" ph="..." />
-                <marker date="1583480229353" expanded="true" signature="4014:4028" ph="..." />
-                <marker date="1583480229353" expanded="true" signature="4480:4490" ph="..." />
-                <marker date="1583480229353" expanded="true" signature="5370:5380" ph="..." />
-                <marker date="1583480229353" expanded="true" signature="6970:7022" ph="..." />
-                <marker date="1583480229353" expanded="true" signature="7051:7115" ph="..." />
-                <marker date="1583480229353" expanded="true" signature="7144:7223" ph="..." />
-                <marker date="1583480229353" expanded="true" signature="7252:7302" ph="..." />
-                <marker date="1583480229353" expanded="true" signature="7331:7376" ph="..." />
-                <marker date="1583480229353" expanded="true" signature="7405:7475" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="41" column="103" lean-forward="false" selection-start-line="41" selection-start-column="85" selection-end-line="41" selection-end-column="103" />
+              <caret line="82" column="27" lean-forward="false" selection-start-line="82" selection-start-column="27" selection-end-line="82" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdminTravel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/AdminTravel.php">
+      <file leaf-file-name="DriverController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/web/AdminTravel/DriverController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="55" column="44" lean-forward="false" selection-start-line="55" selection-start-column="44" selection-end-line="55" selection-end-column="44" />
-              <folding>
-                <element signature="e#23#63#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="17">
+              <caret line="58" column="27" lean-forward="false" selection-start-line="58" selection-start-column="27" selection-end-line="58" selection-end-column="27" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/auth_travel/login.blade.php">
+      <file leaf-file-name="2020_03_10_100550_create_admin_travels_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2020_03_10_100550_create_admin_travels_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="54" column="39" lean-forward="false" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="39" />
-              <folding>
-                <marker date="1585139659483" expanded="true" signature="774:830" ph="..." />
-                <marker date="1585139659483" expanded="true" signature="1256:1310" ph="..." />
-                <marker date="1585139659483" expanded="true" signature="1366:1428" ph="..." />
-                <marker date="1585139659483" expanded="true" signature="1484:1546" ph="..." />
-                <marker date="1585139659483" expanded="true" signature="1602:1650" ph="..." />
-                <marker date="1585139659483" expanded="true" signature="1706:1763" ph="..." />
-                <marker date="1585139659483" expanded="true" signature="1819:1864" ph="..." />
-                <marker date="1585139659483" expanded="true" signature="1920:1969" ph="..." />
-                <marker date="1585139659483" expanded="true" signature="2035:2108" ph="..." />
-                <marker date="1585139659483" expanded="true" signature="2174:2241" ph="..." />
-                <marker date="1585139659483" expanded="true" signature="2297:2356" ph="..." />
-                <marker date="1585139659483" expanded="true" signature="2412:2448" ph="..." />
-                <marker date="1585139659483" expanded="true" signature="3308:3340" ph="..." />
-                <marker date="1585139659483" expanded="true" signature="3616:3624" ph="..." />
-                <marker date="1585139659483" expanded="true" signature="3750:3784" ph="..." />
-                <marker date="1585139659483" expanded="true" signature="4072:4080" ph="..." />
-                <marker date="1585139659483" expanded="true" signature="4348:4406" ph="..." />
-                <marker date="1585139659483" expanded="true" signature="4926:4954" ph="..." />
-                <marker date="1585139659483" expanded="true" signature="5321:5335" ph="..." />
-                <marker date="1585139659483" expanded="true" signature="5593:5603" ph="..." />
-                <marker date="1585139659483" expanded="true" signature="6619:6629" ph="..." />
-                <marker date="1585139659483" expanded="true" signature="7363:7395" ph="..." />
-                <marker date="1585139659483" expanded="true" signature="8069:8093" ph="..." />
-                <marker date="1585139659483" expanded="true" signature="8506:8558" ph="..." />
-                <marker date="1585139659483" expanded="true" signature="8587:8651" ph="..." />
-                <marker date="1585139659483" expanded="true" signature="8680:8730" ph="..." />
-                <marker date="1585139659483" expanded="true" signature="8759:8804" ph="..." />
-                <marker date="1585139659483" expanded="true" signature="8833:8903" ph="..." />
-              </folding>
+            <state relative-caret-position="459">
+              <caret line="29" column="59" lean-forward="false" selection-start-line="28" selection-start-column="12" selection-end-line="29" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2020_03_10_100642_create_cars_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2020_03_10_100642_create_cars_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="26" column="51" lean-forward="false" selection-start-line="26" selection-start-column="51" selection-end-line="26" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2020_03_10_100615_create_drivers_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2020_03_10_100615_create_drivers_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="31" column="51" lean-forward="false" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2014_10_12_000000_create_users_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="25" column="58" lean-forward="false" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2020_03_17_062048_add_fk_driver.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2020_03_17_062048_add_fk_driver.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="101" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="101" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2020_03_10_100918_create_super_admins_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2020_03_10_100918_create_super_admins_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2020_03_10_100659_create_bookings_table.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2020_03_10_100659_create_bookings_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="30" column="101" lean-forward="false" selection-start-line="30" selection-start-column="101" selection-end-line="30" selection-end-column="101" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -240,10 +143,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Controllers/web/AdminTravel/BookingConfirmedController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/web/AdminTravel/BookingNotConfirmedController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/web/AdminTravel/ProfileController.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/web/AdminTravel/TravelController.php" />
         <option value="$PROJECT_DIR$/resources/views/auth_travel/register.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/web/SuperAdmin/NotifikasiController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_03_22_144047_create_hours_table.php" />
@@ -291,6 +190,10 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/web/AdminTravel/Auth/LoginController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/web/AdminTravel/Auth/ResetPasswordController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/web/AdminTravel/Auth/ForgotPasswordController.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_03_17_062048_add_fk_driver.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_03_10_100615_create_drivers_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_03_10_100642_create_cars_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2020_03_10_100659_create_bookings_table.php" />
       </list>
     </option>
   </component>
@@ -474,28 +377,42 @@
               <item name="travelme-web" type="b2602c69:ProjectViewProjectNode" />
               <item name="travelme-web" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Events" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="travelme-web" type="b2602c69:ProjectViewProjectNode" />
               <item name="travelme-web" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Events" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="travelme-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="travelme-web" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="travelme-web" type="b2602c69:ProjectViewProjectNode" />
+              <item name="travelme-web" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Http" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controllers" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="web" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="AdminTravel" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="travelme-web" type="b2602c69:ProjectViewProjectNode" />
               <item name="travelme-web" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Events" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="AdminTravel" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Auth" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="database" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="travelme-web" type="b2602c69:ProjectViewProjectNode" />
               <item name="travelme-web" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Notifications" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="database" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="migrations" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="travelme-web" type="b2602c69:ProjectViewProjectNode" />
@@ -607,12 +524,12 @@
       <workItem from="1584934485819" duration="10781000" />
       <workItem from="1585110028127" duration="9957000" />
       <workItem from="1585129935772" duration="12194000" />
-      <workItem from="1585200662017" duration="8094000" />
+      <workItem from="1585200662017" duration="10374000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="150772000" />
+    <option name="totallyTimeSpent" value="153052000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -673,60 +590,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Procfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="37" lean-forward="false" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/web/AdminTravel/BookingConfirmedController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/SuperAdmin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="18" column="25" lean-forward="false" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/web/SuperAdmin/TravelController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/web/AdminTravel/TravelController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="44" column="5" lean-forward="true" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Exceptions/Handler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Providers/AppServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="29" column="9" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/web/AdminTravel/CarController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="27" column="5" lean-forward="false" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -741,20 +608,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="39" lean-forward="false" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2020_03_10_100550_create_admin_travels_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="29" column="59" lean-forward="true" selection-start-line="28" selection-start-column="12" selection-end-line="29" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="25" column="58" lean-forward="true" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
         </state>
       </provider>
     </entry>
@@ -980,7 +833,7 @@
         <state relative-caret-position="418">
           <caret line="55" column="44" lean-forward="false" selection-start-line="55" selection-start-column="44" selection-end-line="55" selection-end-column="44" />
           <folding>
-            <element signature="e#23#63#0#PHP" expanded="true" />
+            <element signature="e#23#63#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1150,7 +1003,7 @@
         <state relative-caret-position="221">
           <caret line="35" column="46" lean-forward="false" selection-start-line="35" selection-start-column="46" selection-end-line="35" selection-end-column="46" />
           <folding>
-            <element signature="e#61#81#0#PHP" expanded="true" />
+            <element signature="e#61#81#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1173,8 +1026,80 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="32" column="14" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="14" />
+        <state relative-caret-position="136">
+          <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/web/AdminTravel/CarController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="82" column="27" lean-forward="false" selection-start-line="82" selection-start-column="27" selection-end-line="82" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/web/AdminTravel/DriverController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="58" column="27" lean-forward="false" selection-start-line="58" selection-start-column="27" selection-end-line="58" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_03_10_100918_create_super_admins_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="25" column="58" lean-forward="false" selection-start-line="25" selection-start-column="58" selection-end-line="25" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_03_10_100642_create_cars_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="26" column="51" lean-forward="false" selection-start-line="26" selection-start-column="51" selection-end-line="26" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_03_10_100550_create_admin_travels_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="29" column="59" lean-forward="false" selection-start-line="28" selection-start-column="12" selection-end-line="29" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_03_10_100615_create_drivers_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="31" column="51" lean-forward="false" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_03_17_062048_add_fk_driver.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="101" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="101" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2020_03_10_100659_create_bookings_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="30" column="101" lean-forward="false" selection-start-line="30" selection-start-column="101" selection-end-line="30" selection-end-column="101" />
           <folding />
         </state>
       </provider>

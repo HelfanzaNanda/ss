@@ -15,6 +15,7 @@ class CreateDriversTable extends Migration
     {
         Schema::create('drivers', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('id_travel')->unsigned();
             $table->integer('id_car')->unsigned();
             $table->char('nik','16')->unique();
             $table->char('number_sim', '16')->unique();
@@ -28,7 +29,7 @@ class CreateDriversTable extends Migration
             $table->string('telephone', '13');
             $table->text('api_token');
             $table->rememberToken();
-            $table->enum('status', ['0', '1'])->default('1');
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }

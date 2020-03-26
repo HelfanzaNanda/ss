@@ -15,6 +15,7 @@ class CreateCarsTable extends Migration
     {
         Schema::create('cars', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('id_travel')->unsigned();
             $table->string('number_plate', '11')->unique();
             $table->string('name', '30');
             $table->string('from', '30');
@@ -23,8 +24,10 @@ class CreateCarsTable extends Migration
             $table->text('picture_travel')->nullable();
             $table->integer('seat');
             $table->string('facility', '50');
-            $table->enum('status', ['0', '1'])->default('1');
+            $table->boolean('status')->default(true);
             $table->timestamps();
+
+            $table->foreign('id_travel')->references('id')->on('admin_travels')->onDelete('CASCADE');
         });
     }
 

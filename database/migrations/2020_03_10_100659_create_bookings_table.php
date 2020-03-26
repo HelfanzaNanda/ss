@@ -16,6 +16,7 @@ class CreateBookingsTable extends Migration
         Schema::create('bookings', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_user')->unsigned();
+            $table->integer('id_travel')->unsigned();
             $table->integer('id_driver')->unsigned();
             $table->integer('price');
             $table->integer('total_seat');
@@ -27,6 +28,7 @@ class CreateBookingsTable extends Migration
 
             $table->foreign('id_driver')->references('id')->on('drivers')->onDelete('CASCADE');
             $table->foreign('id_user')->references('id')->on('users')->onDelete('CASCADE');
+            $table->foreign('id_travel')->references('id')->on('admin_travels')->onDelete('CASCADE');
         });
     }
 

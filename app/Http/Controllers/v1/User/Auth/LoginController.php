@@ -31,8 +31,7 @@ class LoginController extends Controller
 
         if (Auth::guard('web')->attempt($credential)){
             $user = Auth::guard('web')->user();
-            if ($user->active == true){
-
+            if ($user->active == false){
                 return response()->json([
                     'message' => 'Berhasil Login',
                     'status' => true,

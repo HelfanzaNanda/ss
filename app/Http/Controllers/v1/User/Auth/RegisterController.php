@@ -33,6 +33,7 @@ class RegisterController extends Controller
         $data->email = $request->email;
         $data->password = Hash::make($request->password);
         $data->api_token = Str::random(80);
+
         $data->save();
 
         return (new UserResource($data))->additional([

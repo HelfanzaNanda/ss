@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\v1\User\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\User\UserResource;
+use App\Http\Resources\UserResource;
 use App\Providers\RouteServiceProvider;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;

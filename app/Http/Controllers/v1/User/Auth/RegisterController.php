@@ -39,11 +39,10 @@ class RegisterController extends Controller
         return response()->json([
             'status' => true,
             'message' => 'Berhasil Register',
-            'data' => (new UserResource($data))->additional([
-                'meta' => [
-                    'token' => $data->api_token,
-                ]
-            ])
+            'data' => new UserResource($data),
+            'meta' => [
+                'token' => $data->api_token,
+            ],
         ], 200);
 
 //        return (new UserResource($data))->additional([

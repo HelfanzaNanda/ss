@@ -22,7 +22,9 @@ class BookingConfirmedController extends Controller
     public function index()
     {
 
-        $datas = Booking::all()->where('status', '2');
+        $datas = Booking::all()
+            ->where('id_travel',  Auth::guard('travel')->user()->id)
+            ->where('status', '2');
         return view('pages.travel.booking.confirmed.index', compact('datas'));
     }
 

@@ -21,7 +21,9 @@ class BookingNotConfirmedController extends Controller
 
     public function index()
     {
-        $datas = Booking::all()->whereIn('status',['1', '0']);
+        $datas = Booking::all()
+            ->where('id_travel',  Auth::guard('travel')->user()->id)
+            ->whereIn('status',['1', '0']);
         return view('pages.travel.booking.notconfirmed.index', compact('datas'));
     }
 

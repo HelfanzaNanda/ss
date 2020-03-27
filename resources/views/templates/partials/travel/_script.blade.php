@@ -48,5 +48,13 @@
             $(this).parents('.entry:first').remove();
             return false;
         });
+
+    });
+</script>
+<script >
+    $(document).ready(function () {
+        $('.hour').timePicker({
+            timeFormat: 'HH:mm',
+        });
     });
 </script>

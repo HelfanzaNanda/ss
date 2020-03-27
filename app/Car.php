@@ -14,13 +14,23 @@ class Car extends Model
         return $this->hasOne(Driver::class, 'id_car', 'id');
     }
 
-    public function day()
+    public function days()
     {
         return $this->hasMany(Day::class, 'id_car', 'id');
     }
 
-    public function hour()
+    public function day()
+    {
+        return $this->hasOne(Day::class, 'id_car', 'id');
+    }
+
+    public function hours()
     {
         return $this->hasMany(Hour::class, 'id_car', 'id');
+    }
+
+    public function travel()
+    {
+        return $this->belongsTo(AdminTravel::class, 'id_travel', 'id');
     }
 }

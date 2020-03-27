@@ -11,7 +11,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title">Data Travel</h4>
+                            <h4 class="card-title">Driver Travel</h4>
                             <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
                             <div class="heading-elements">
                                 <ul class="list-inline mb-0">
@@ -38,7 +38,7 @@
                                         <tr>
                                             <td>{{$loop->iteration}}</td>
                                             <td><a class="avatar bg-danger" data-toggle="modal" data-target="#default{{$loop->iteration}}" type="button">
-                                                    <img src="{{asset('uploads/travel/driver/'.$data->path_avatar)}}" width="40" height="40">
+                                                    <img src="{{asset('uploads/travel/driver/'.$data->avatar)}}" width="40" height="40">
                                                 </a>
                                             </td>
                                             <td>{{$data->name}}</td>
@@ -67,7 +67,7 @@
                                                     </div>
                                                     <div class="modal-body">
                                                         <div class="d-flex justify-content-center">
-                                                            <img src="{{asset('uploads/travel/driver/'.$data->path_avatar)}}" style="height: 480px; width: 480px;" >
+                                                            <img src="{{asset('uploads/travel/driver/'.$data->avatar)}}" style="height: 480px; width: 480px;" >
                                                         </div>
 
                                                     </div>

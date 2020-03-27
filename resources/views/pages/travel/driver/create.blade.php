@@ -109,14 +109,14 @@
 
                                             <div class="form-group">
                                                 <label for="projectinput3">Foto</label>
-                                                <input class="form-control {{$errors->has('path_avatar')?'is-invalid':''}}"
-                                                       type="file" name="path_avatar" value="{{old('path_avatar')}}"
+                                                <input class="form-control {{$errors->has('avatar')?'is-invalid':''}}"
+                                                       type="file" name="avatar" value="{{old('avatar')}}"
                                                 onchange="loadfile(event)" id="foto">
                                                 <br/>
                                                 <img id="output" class="img-fluid" height="100" width="100" style="display: none">
-                                                @if ($errors->has('path_avatar'))
+                                                @if ($errors->has('avatar'))
                                                     <span class="invalid-feedback" role="alert">
-                                                        <p><b>{{ $errors->first('path_avatar') }}</b></p>
+                                                        <p><b>{{ $errors->first('avatar') }}</b></p>
                                                     </span>
                                                 @endif
                                             </div>

@@ -20,6 +20,7 @@ class AdminTravel extends Authenticatable implements MustVerifyEmail
     protected $guard = 'travel';
     protected $table = 'admin_travels';
     protected $fillable = [
+        'id',
         'license_number',
         'business_owner',
         'business_name',
@@ -54,5 +55,10 @@ class AdminTravel extends Authenticatable implements MustVerifyEmail
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new AdminTravelResetPasswordNotification($token));
+    }
+
+    public function cars()
+    {
+        return $this->hasMany(Car::class, 'id_travel', 'id');
     }
 }

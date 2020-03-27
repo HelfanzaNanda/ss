@@ -98,17 +98,17 @@
 
                                             <div class="form-group">
                                                 <label for="projectinput3">Foto</label>
-                                                <input type="hidden" value="{{$data->path_avatar}}" name="old_avatar">
-                                                <input class="form-control {{$errors->has('path_avatar')?'is-invalid':''}}"
-                                                       type="file" name="path_avatar" onchange="loadfile(event)" id="foto">
-                                                @if ($errors->has('path_avatar'))
+                                                <input type="hidden" value="{{$data->avatar}}" name="old_avatar">
+                                                <input class="form-control {{$errors->has('avatar')?'is-invalid':''}}"
+                                                       type="file" name="avatar" onchange="loadfile(event)" id="foto">
+                                                @if ($errors->has('avatar'))
                                                     <span class="invalid-feedback" role="alert">
-                                                        <p><b>{{ $errors->first('path_avatar') }}</b></p>
+                                                        <p><b>{{ $errors->first('avatar') }}</b></p>
                                                     </span>
                                                 @endif
                                                 <br/>
                                                 <img id="output" class="img-fluid" height="100" width="100"
-                                                     src="{{asset('uploads/travel/driver/'.$data->path_avatar)}}">
+                                                     src="{{asset('uploads/travel/driver/'.$data->avatar)}}">
                                             </div>
 
                                         </div>

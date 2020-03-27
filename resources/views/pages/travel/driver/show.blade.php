@@ -9,7 +9,7 @@
                 <div class="col-12 col-sm-7">
                     <div class="media mb-2">
                         <a class="mr-1">
-                            <img src="{{asset('uploads/travel/driver/'.$data->path_avatar)}}"
+                            <img src="{{asset('uploads/travel/driver/'.$data->avatar)}}"
                                  alt="users view avatar"
                                  class="users-avatar-shadow rounded-circle" height="64" width="64">
                         </a>
@@ -50,8 +50,10 @@
                                     </tr>
                                     <tr>
                                         <td>Verified</td>
-                                        <td class="users-view-verified"><span
-                                                    class="badge badge-success">{{$data->status == '1' ? 'Aktif' : 'Tidak Aktif'}}</span>
+                                        <td class="users-view-verified">
+                                            <span class="badge {{$data->active ? 'badge-success' : 'badge-danger'}}">
+                                                {{$data->active ? 'Aktif' : 'Tidak Aktif'}}
+                                            </span>
                                         </td>
                                     </tr>
                                     </tbody>

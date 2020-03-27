@@ -26,7 +26,9 @@ class CarController extends Controller
 
     public function index()
     {
-        $datas = Car::all()->where('status', '1');
+        $datas = Car::all()
+            ->where('id_travel', Auth::guard('travel')->user()->id)
+            ->where('status', '1');
         return view('pages.travel.car.index', compact('datas'));
 //        foreach ($datas as $data) {
 //            $result[] = [
@@ -57,42 +59,43 @@ class CarController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
 
-        $this->validate($request,[
-            'number_plate'  => 'required|unique:cars',
-            'name'          => 'required',
-            'to'            => 'required',
-            'price'         => 'required|numeric',
-            'seat'          => 'required|numeric',
-            'facility'      => 'required',
-            'day'           => 'required',
-            'hour'          => 'required'
+        $this->validate($request, [
+            'number_plate' => 'required|unique:cars',
+            'name' => 'required',
+            'to' => 'required',
+            'price' => 'required|numeric',
+            'seat' => 'required|numeric',
+            'facility' => 'required',
+            'day' => 'required',
+            'hour' => 'required'
         ]);
 
-        $picture_travel     = $request->file('picture_travel');
-        $path               = time().'-car'.'.'. $picture_travel->getClientOriginalExtension();
-        $destinationPath    = public_path('uploads/travel/car');
+        $picture_travel = $request->file('picture_travel');
+        $path = time() . '-car' . '.' . $picture_travel->getClientOriginalExtension();
+        $destinationPath = public_path('uploads/travel/car');
         $picture_travel->move($destinationPath, $path);
 
-        $data                   = new Car();
-        $data->number_plate     = strtoupper($request->number_plate );
-        $data->name             = $request->name;
-        $data->from             = 'Tegal';
-        $data->to               = $request->to;
-        $data->price            = $request->price;
-        $data->seat             = $request->seat;
-        $data->facility         = $request->facility;
-        $data->picture_travel   = $path;
-        $data->status           = '1';
+        $data = new Car();
+        $data->id_travel = Auth::guard('travel')->user()->id;
+        $data->number_plate = strtoupper($request->number_plate);
+        $data->name = $request->name;
+        $data->from = 'Tegal';
+        $data->to = $request->to;
+        $data->price = $request->price;
+        $data->seat = $request->seat;
+        $data->facility = $request->facility;
+        $data->picture_travel = $path;
+        $data->status = '1';
         $data->save();
 
         $hours = $request->hour;
-        foreach ($hours as $hour){
+        foreach ($hours as $hour) {
             $itemhours[] = [
                 'id_car' => $data->id,
                 'hour' => $hour,
@@ -101,7 +104,7 @@ class CarController extends Controller
         DB::table('hours')->insert($itemhours);
 
         $days = $request->day;
-        foreach ($days as $day){
+        foreach ($days as $day) {
             $itemdays[] = [
                 'id_car' => $data->id,
                 'day' => $day,
@@ -123,7 +126,7 @@ class CarController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -134,30 +137,84 @@ class CarController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        //
+        $data = Car::findOrFail($id);
+        /*return response()->json([
+            'car' => $data,
+        ]);*/
+        //dd($data->days);
+        return view('pages.travel.car.edit', compact('data'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'number_plate' => 'required|unique:cars',
+            'name' => 'required',
+            'to' => 'required',
+            'price' => 'required|numeric',
+            'seat' => 'required|numeric',
+            'facility' => 'required',
+            'day' => 'required',
+            'hour' => 'required'
+        ]);
+
+        $picture_travel = $request->file('picture_travel');
+        $path = time() . '-car' . '.' . $picture_travel->getClientOriginalExtension();
+        $destinationPath = public_path('uploads/travel/car');
+        $picture_travel->move($destinationPath, $path);
+
+        $data = Car::findOrFail($id);
+        $data->id_travel = Auth::guard('travel')->user()->id;
+        $data->number_plate = strtoupper($request->number_plate);
+        $data->name = $request->name;
+        $data->from = 'Tegal';
+        $data->to = $request->to;
+        $data->price = $request->price;
+        $data->seat = $request->seat;
+        $data->facility = $request->facility;
+        $data->picture_travel = $path;
+        $data->status = '1';
+        $data->save();
+
+        $hours = $request->hour;
+        foreach ($hours as $hour) {
+            $itemhours[] = [
+                'id_car' => $data->id,
+                'hour' => $hour,
+            ];
+        }
+        DB::table('hours')->update($itemhours);
+
+        $days = $request->day;
+        foreach ($days as $day) {
+            $itemdays[] = [
+                'id_car' => $data->id,
+                'day' => $day,
+
+            ];
+        }
+        DB::table('days')->update($itemdays);
+
+
+        return redirect()->route('car.index')->with('create', 'Berhasil menambahkan data!');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

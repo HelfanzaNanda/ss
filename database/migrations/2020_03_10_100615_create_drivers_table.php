@@ -24,10 +24,10 @@ class CreateDriversTable extends Migration
             $table->string('email', '30')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->text('password');
-            $table->text('path_avatar')->nullable();
+            $table->text('avatar')->nullable();
             $table->text('address');
             $table->string('telephone', '13');
-            $table->text('api_token');
+            $table->string('api_token', 80)->unique()->nullable()->default(null);
             $table->rememberToken();
             $table->boolean('active')->default(true);
             $table->timestamps();

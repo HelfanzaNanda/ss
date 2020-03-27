@@ -11,6 +11,7 @@ use App\Http\Resources\DayResource;
 use App\Http\Resources\DriverResource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class DriverController extends Controller
 {
@@ -27,7 +28,9 @@ class DriverController extends Controller
 
     public function index()
     {
-        $datas = Driver::all()->where('status', '1');
+        $datas = Driver::all()
+            ->where('id_travel',  Auth::guard('travel')->user()->id)
+            ->where('active', true);
         return view('pages.travel.driver.index', compact('datas'));
     }
 
@@ -38,7 +41,9 @@ class DriverController extends Controller
      */
     public function create()
     {
-        $datas = Car::all()->where('status', '1');
+        $datas = Car::all()
+            ->where('id_travel',  Auth::guard('travel')->user()->id)
+            ->where('status', '1');
         return view('pages.travel.driver.create', compact('datas'));
     }
 
@@ -57,28 +62,28 @@ class DriverController extends Controller
            'email'      => 'required|unique:drivers',
            'telephone'  => 'required|numeric',
            'address'    => 'required',
-           'path_avatar'=> 'required|image|mimes:jpg,png,jpeg|max:2048'
+           'avatar'=> 'required|image|mimes:jpg,png,jpeg|max:2048'
         ]);
 
-        $avatar              = $request->file('path_avatar');
-        $path_avatar         = time().'-driver'.'.'. $avatar->getClientOriginalExtension();
+        $avatar              = $request->file('avatar');
+        $filename         = time().'-driver'.'.'. $avatar->getClientOriginalExtension();
         $destinationPath    = public_path('uploads/travel/driver');
-        $avatar->move($destinationPath, $path_avatar);
+        $avatar->move($destinationPath, $filename);
 
 
         $data               = new Driver();
+        $data->id_travel    = Auth::guard('travel')->user()->id;
         $data->nik          = $request->nik;
         $data->number_sim   = $request->number_sim;
         $data->id_car       = $request->id_car;
         $data->name         = $request->name;
-        $data->path_avatar  = $path_avatar;
+        $data->avatar       = $filename;
         $data->gender       = $request->gender;
         $data->email        = $request->email;
         $data->password     = bcrypt($request->telephone);
         $data->telephone    = $request->telephone;
         $data->address      = $request->address;
-        $data->api_token    = bcrypt($request->email);
-        $data->status       = '1';
+        $data->api_token    = Str::random(80);
         $data->save();
         return redirect()->route('driver.index')->with('create', 'Berhasil Menambahkan Data!');
 
@@ -142,21 +147,26 @@ class DriverController extends Controller
             'name'       => 'required',
             'telephone'  => 'required|numeric',
             'address'    => 'required',
-            'path_avatar'=> 'image|mimes:jpg,png,jpeg|max:2048'
+            'avatar'=> 'image|mimes:jpg,png,jpeg|max:2048'
         ]);
 
-        $avatar              = $request->file('path_avatar');
-        $path_avatar         = time().'-driver'.'.'. $avatar->getClientOriginalExtension();
-        $destinationPath    = public_path('uploads/travel/driver');
-        $avatar->move($destinationPath, $path_avatar);
 
         $data               = Driver::findOrFail($id);
+        $data->id_travel    = Auth::guard('travel')->user()->id;
         $data->id_car       = $request->id_car;
         $data->name         = $request->name;
         $data->gender       = $request->gender;
         $data->telephone    = $request->telephone;
         $data->address      = $request->address;
-        $data->path_avatar  = $request->file('path_avatar') == '' ? $request->old_avatar : $path_avatar;
+        if ($request->file('avatar') != ''){
+            $avatar         = $request->file('avatar');
+            $filename       = time().'-driver'.'.'. $avatar->getClientOriginalExtension();
+            $destinationPath= public_path('uploads/travel/driver');
+            $avatar->move($destinationPath, $filename);
+            $request->avatar = $filename;
+        }else{
+            $request->old_avatar;
+        }
         $data->update();
 
 //        return response()->json([

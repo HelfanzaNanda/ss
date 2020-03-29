@@ -35,7 +35,11 @@ class LoginController extends Controller
                 return response()->json([
                     'status' => true,
                     'message' => 'Berhasil Login',
-                    'data' => new UserResource($user)
+                    'data' => new UserResource($user),
+                    'meta' => [
+                        'token' => $user->api_token,
+                    ],
+
                 ], 200);
             }else{
                 return response()->json([

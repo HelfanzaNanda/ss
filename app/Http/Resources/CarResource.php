@@ -29,10 +29,6 @@ class CarResource extends JsonResource
             'driver'        => new DriverResource($this->driver),
             'days'          => DayResource::collection($this->days),
             'hours'         => HourResource::collection($this->hours)
-
-
-            /*'id_travel'     => new TravelResource($this->travel),
-            'driver'        => new DriverResource($this->driver),*/
         ];
     }
 }

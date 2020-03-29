@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="42e660d4-05ff-4435-b513-e4c398a519c6" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Car.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Car.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/web/AdminTravel/CarController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/web/AdminTravel/CarController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/web/AdminTravel/DriverController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/web/AdminTravel/DriverController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/DayResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/DayResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth_travel/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth_travel/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/travel/car/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/travel/car/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/v1/User/CarController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/v1/User/CarController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/CarResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/CarResource.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -144,12 +140,6 @@
       <path value="$PROJECT_DIR$/vendor/uxweb/sweet-alert" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-89" />
-    <option name="y" value="6" />
-    <option name="width" value="697" />
-    <option name="height" value="745" />
-  </component>
   <component name="ProjectId" id="1ZkXR07pDKrmFof1hwUFUSg3HEZ" />
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -248,7 +238,7 @@
       <workItem from="1585380367947" duration="719000" />
       <workItem from="1585384063058" duration="963000" />
       <workItem from="1585448503503" duration="4615000" />
-      <workItem from="1585460701820" duration="2109000" />
+      <workItem from="1585460701820" duration="5023000" />
     </task>
     <servers />
   </component>

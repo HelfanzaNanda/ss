@@ -19,7 +19,7 @@ class CarController extends Controller
         return response()->json([
             'status' => true,
             'message' => 'Berhasil',
-            'data' => CarResource::collection($data)
+            'data' => CarResource::collection($data),
         ], 200);
     }
 }

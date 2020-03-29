@@ -127,38 +127,22 @@
                                                 <label>Hari</label>
                                                 <select class="select2 form-control" multiple="multiple"
                                                         name="day[]">
-                                                    @foreach($data->days as $day)
-                                                        <option
-                                                            value="Senin" {{$day->day == 'Senin' ? "selected" : ''}}>
-                                                            Senin
-                                                        </option>
-                                                        <option
-                                                            value="Selasa" {{$day->day == 'Selasa' ? "selected" : ''}}>
-                                                            Selasa
-                                                        </option>
-                                                        <option value="Rabu" {{$day->day == 'Rabu' ? "selected" : ''}}>
-                                                            Rabu
-                                                        </option>
-                                                        <option
-                                                            value="Kamis" {{$day->day == 'Kamis' ? "selected" : ''}}>
-                                                            Kamis
-                                                        </option>
-                                                        <option
-                                                            value="Jumat" {{$day->day == 'Jumat' ? "selected" : ''}}>
-                                                            Jumat
-                                                        </option>
-                                                        <option
-                                                            value="Sabtu" {{$day->day == 'Sabtu' ? "selected" : ''}}>
-                                                            Sabtu
-                                                        </option>
-                                                        <option
-                                                            value="Minggu" {{$day->day == 'Minggu' ? "selected" : ''}}>
-                                                            Minggu
-                                                        </option>
-                                                    @endforeach
+                                                    @php($hari = ['Senin','Selasa','Rabu','Kamis','Jumat','Sabtu','Minggu'])
+                                                    @php($index = [])
+                                                    @for($i = 0; $i < count($hari); $i++ )
+                                                        @foreach($data->days as $day)
+                                                            @php($index[] = $day->day)
+                                                            @if($hari[$i] == $day->day)
+                                                                <option value="{{$day->day}}" selected>{{$day->day}}</option>
+                                                                @break
+                                                            @endif
+                                                        @endforeach
+                                                        @if($hari[$i] != $index[$i])
+                                                                <option value="{{$hari[$i]}}">{{$hari[$i]}}</option>
+                                                        @endif
+                                                    @endfor
                                                 </select>
                                             </div>
-
                                         </div>
 
                                     </div>

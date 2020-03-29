@@ -145,13 +145,15 @@ class CarController extends Controller
     public function edit($id)
     {
         $data = Car::findOrFail($id);
+
+//        dd($data->days);
         //$days = (DayResource::collection($data))->groupBy('day');
-        return response()->json([
-            'car' => $data,
-            'days' => $data->days
-        ]);
+//        return response()->json([
+//            'car' => $data,
+//            'days' => $data->days
+//        ]);
         //dd($data->days);
-        //return view('pages.travel.car.edit', compact('data'));
+        return view('pages.travel.car.edit', compact('data'));
     }
 
     /**

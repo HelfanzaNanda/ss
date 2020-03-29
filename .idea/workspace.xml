@@ -4,7 +4,8 @@
     <list default="true" id="42e660d4-05ff-4435-b513-e4c398a519c6" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/v1/User/CarController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/v1/User/CarController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/CarResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/CarResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/web/AdminTravel/CarController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/web/AdminTravel/CarController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/travel/car/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/travel/car/edit.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -180,19 +181,19 @@
     <property name="settings.editor.selected.configurable" value="project.scopes" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\travelme-web\app\Http\Resources" />
-      <recent name="C:\xampp\htdocs\travelme-web\app\Http\Controllers" />
-      <recent name="C:\xampp\htdocs\travelme-web\resources\views\pages\travel\booking\notconfirmed" />
-      <recent name="C:\xampp\htdocs\travelme-web\resources\views\pages\travel\booking\index" />
-      <recent name="C:\xampp\htdocs\travelme-web\resources\views\pages\travel\booking\confirmed" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\travelme-web\app\Http\Controllers\v1\Driver" />
       <recent name="C:\xampp\htdocs\travelme-web\app\Http\Controllers\v1\User" />
       <recent name="C:\xampp\htdocs\travelme-web\resources\views\pages\travel\driver" />
       <recent name="C:\xampp\htdocs\travelme-web\resources\views\pages\travel\booking\notconfirmed" />
       <recent name="C:\xampp\htdocs\travelme-web\resources\views\pages\travel\booking" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\travelme-web\app\Http\Resources" />
+      <recent name="C:\xampp\htdocs\travelme-web\app\Http\Resources\User" />
+      <recent name="C:\xampp\htdocs\travelme-web\app\Http\Controllers" />
+      <recent name="C:\xampp\htdocs\travelme-web\resources\views\pages\travel\booking\notconfirmed" />
+      <recent name="C:\xampp\htdocs\travelme-web\resources\views\pages\travel\booking\index" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -238,7 +239,7 @@
       <workItem from="1585380367947" duration="719000" />
       <workItem from="1585384063058" duration="963000" />
       <workItem from="1585448503503" duration="4615000" />
-      <workItem from="1585460701820" duration="5023000" />
+      <workItem from="1585460701820" duration="14101000" />
     </task>
     <servers />
   </component>

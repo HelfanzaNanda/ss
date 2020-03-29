@@ -97,7 +97,7 @@
                                                 <fieldset class="form-group floating-label-form-group">
                                                     <label for="user-name">Alamat</label>
                                                     <textarea rows="5" class="form-control {{$errors->has('address')?'is-invalid':''}}"
-                                                              name="address" placeholder="Masukkan Alamat">value="{{old('address')}}"</textarea>
+                                                              name="address" placeholder="Masukkan Alamat">{{old('address')}}</textarea>
                                                     @if ($errors->has('address'))
                                                         <span class="invalid-feedback" role="alert">
                                                         <p><b>{{ $errors->first('address')}}</b></p>

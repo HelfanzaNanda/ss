@@ -87,9 +87,9 @@ class DriverController extends Controller
         $data->save();
         return redirect()->route('driver.index')->with('create', 'Berhasil Menambahkan Data!');
 
-        return response()->json([
+        /*return response()->json([
             'data' => $data,
-        ], 201);
+        ], 201);*/
     }
 
     /**

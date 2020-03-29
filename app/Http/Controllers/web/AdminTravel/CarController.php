@@ -7,6 +7,8 @@ use App\Day;
 use App\Driver;
 use App\Hour;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\CarResource;
+use App\Http\Resources\DayResource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -143,11 +145,13 @@ class CarController extends Controller
     public function edit($id)
     {
         $data = Car::findOrFail($id);
-        /*return response()->json([
+        //$days = (DayResource::collection($data))->groupBy('day');
+        return response()->json([
             'car' => $data,
-        ]);*/
+            'days' => $data->days
+        ]);
         //dd($data->days);
-        return view('pages.travel.car.edit', compact('data'));
+        //return view('pages.travel.car.edit', compact('data'));
     }
 
     /**

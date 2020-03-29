@@ -108,10 +108,11 @@
                                                 <label for="projectinput3">Foto</label>
                                                 <input type="hidden" value="{{$data->picture_travel}}"
                                                        name="old_picture_travel">
-                                                <input class="form-control {{$errors->has('picture_travel')?'is-invalid':''}}"
-                                                       type="file" name="picture_travel"
-                                                       value="{{old('picture_travel')}}"
-                                                       onchange="loadfile(event)" id="foto">
+                                                <input
+                                                    class="form-control {{$errors->has('picture_travel')?'is-invalid':''}}"
+                                                    type="file" name="picture_travel"
+                                                    value="{{old('picture_travel')}}"
+                                                    onchange="loadfile(event)" id="foto">
                                                 <br/>
                                                 <img id="output" class="img-fluid" height="100" width="100"
                                                      src="{{asset('/uploads/travel/car/'.$data->picture_travel)}}">
@@ -127,25 +128,31 @@
                                                 <select class="select2 form-control" multiple="multiple"
                                                         name="day[]">
                                                     @foreach($data->days as $day)
-                                                        <option value="Senin" {{$day->day == 'Senin' ? "selected" : ''}}>
+                                                        <option
+                                                            value="Senin" {{$day->day == 'Senin' ? "selected" : ''}}>
                                                             Senin
                                                         </option>
-                                                        <option value="Selasa" {{$day->day == 'Selasa' ? "selected" : ''}}>
+                                                        <option
+                                                            value="Selasa" {{$day->day == 'Selasa' ? "selected" : ''}}>
                                                             Selasa
                                                         </option>
                                                         <option value="Rabu" {{$day->day == 'Rabu' ? "selected" : ''}}>
                                                             Rabu
                                                         </option>
-                                                        <option value="Kamis" {{$day->day == 'Kamis' ? "selected" : ''}}>
+                                                        <option
+                                                            value="Kamis" {{$day->day == 'Kamis' ? "selected" : ''}}>
                                                             Kamis
                                                         </option>
-                                                        <option value="Jumat" {{$day->day == 'Jumat' ? "selected" : ''}}>
+                                                        <option
+                                                            value="Jumat" {{$day->day == 'Jumat' ? "selected" : ''}}>
                                                             Jumat
                                                         </option>
-                                                        <option value="Sabtu" {{$day->day == 'Sabtu' ? "selected" : ''}}>
+                                                        <option
+                                                            value="Sabtu" {{$day->day == 'Sabtu' ? "selected" : ''}}>
                                                             Sabtu
                                                         </option>
-                                                        <option value="Minggu" {{$day->day == 'Minggu' ? "selected" : ''}}>
+                                                        <option
+                                                            value="Minggu" {{$day->day == 'Minggu' ? "selected" : ''}}>
                                                             Minggu
                                                         </option>
                                                     @endforeach
@@ -215,6 +222,6 @@
 
 <script>
     $('#hour').timePicker({
-        timeFormat:'h:i',
+        timeFormat: 'h:i',
     });
 </script>

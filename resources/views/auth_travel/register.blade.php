@@ -64,7 +64,7 @@
                                                 <fieldset class="form-group floating-label-form-group">
                                                     <label for="user-name">License Number</label>
                                                     <input type="text" class="form-control {{$errors->has('license_number')?'is-invalid':''}}"
-                                                           placeholder="Masukkan Nomor License Anda" name="license_number">
+                                                           placeholder="Masukkan Nomor License Anda" name="license_number" value="{{old('lincese_number')}}">
                                                     @if ($errors->has('license_number'))
                                                         <span class="invalid-feedback" role="alert">
                                                         <p><b>{{ $errors->first('license_number') }}</b></p>
@@ -75,7 +75,7 @@
                                                 <fieldset class="form-group floating-label-form-group">
                                                     <label for="user-name">Nama Pemilik</label>
                                                     <input type="text" class="form-control {{$errors->has('business_owner')?'is-invalid':''}}"
-                                                           placeholder="Masukkan Nama Pemilik Usaha" name="business_owner">
+                                                           placeholder="Masukkan Nama Pemilik Usaha" name="business_owner" value="{{old('business_owner')}}">
                                                     @if ($errors->has('business_owner'))
                                                         <span class="invalid-feedback" role="alert">
                                                         <p><b>{{ $errors->first('business_owner')}}</b></p>
@@ -86,7 +86,7 @@
                                                 <fieldset class="form-group floating-label-form-group">
                                                     <label for="user-name">Nama Usaha</label>
                                                     <input type="text" class="form-control {{$errors->has('business_name')?'is-invalid':''}}"
-                                                           placeholder="Masukkan Nama Usaha" name="business_name">
+                                                           placeholder="Masukkan Nama Usaha" name="business_name" value="{{old('lincese_name')}}">
                                                     @if ($errors->has('business_name'))
                                                         <span class="invalid-feedback" role="alert">
                                                         <p><b>{{ $errors->first('business_name')}}</b></p>
@@ -97,7 +97,7 @@
                                                 <fieldset class="form-group floating-label-form-group">
                                                     <label for="user-name">Alamat</label>
                                                     <textarea rows="5" class="form-control {{$errors->has('address')?'is-invalid':''}}"
-                                                              name="address" placeholder="Masukkan Alamat"></textarea>
+                                                              name="address" placeholder="Masukkan Alamat">value="{{old('address')}}"</textarea>
                                                     @if ($errors->has('address'))
                                                         <span class="invalid-feedback" role="alert">
                                                         <p><b>{{ $errors->first('address')}}</b></p>
@@ -110,7 +110,7 @@
                                                 <fieldset class="form-group floating-label-form-group">
                                                     <label for="user-email">Your Email Address</label>
                                                     <input type="email" class="form-control {{$errors->has('email')?'is-invalid':''}}"
-                                                           placeholder="Masukkan Email" name="email">
+                                                           placeholder="Masukkan Email" name="email" value="{{old('email')}}">
                                                     @if ($errors->has('email'))
                                                         <span class="invalid-feedback" role="alert">
                                                         <p><b>{{ $errors->first('email')}}</b></p>
@@ -144,7 +144,7 @@
                                                 <fieldset class="form-group floating-label-form-group mb-1">
                                                     <label for="user-password">No Hp</label>
                                                     <input type="number" class="form-control {{$errors->has('telephone')?'is-invalid':''}}"
-                                                           placeholder="Masukkan Nomor Handphone" name="telephone">
+                                                           placeholder="Masukkan Nomor Handphone" name="telephone" value="{{old('telephone')}}">
                                                     @if ($errors->has('telephone'))
                                                         <span class="invalid-feedback" role="alert">
                                                         <p><b>{{ $errors->first('telephone')}}</b></p>

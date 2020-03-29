@@ -16,7 +16,8 @@ class DayResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'day' => $this->day
+            'day' => $this->day,
+            'car' => new CarResource($this->car)
         ];
     }
 }

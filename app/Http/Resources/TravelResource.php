@@ -23,6 +23,11 @@ class TravelResource extends JsonResource
             'email'             => $this->email,
             'avatar'            => $this->path_avatar,
             'telephone'         => $this->telephone,
+            'cars'              => [
+                'id'    => $this->cars->id,
+                'name'  => $this->cars->name,
+                'to'    => $this->cars->to,
+            ]
         ];
     }
 }

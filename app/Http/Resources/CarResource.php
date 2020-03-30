@@ -16,7 +16,6 @@ class CarResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'travel'        => new TravelResource($this->travel),
             'id'            => $this->id,
             'number_plate'  => $this->number_plate,
             'name'          => $this->name,

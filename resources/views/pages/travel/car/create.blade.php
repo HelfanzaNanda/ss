@@ -60,7 +60,8 @@
                                                     <input class="form-control" name="hour[]" type="time"/>
                                                     <span class="input-group-btn">
                                                         <button type="button" class="btn btn-success btn-add">
-                                                            <span class="fa fa-plus" aria-hidden="true" style="font-size: 12px;"></span>
+                                                            <span class="fa fa-plus" aria-hidden="true"
+                                                                  style="font-size: 12px;"></span>
                                                         </button>
                                                     </span>
                                                 </div>
@@ -109,10 +110,11 @@
 
                                             <div class="form-group">
                                                 <label for="projectinput3">Foto</label>
-                                                <input class="form-control {{$errors->has('picture_travel')?'is-invalid':''}}"
-                                                       type="file" name="picture_travel"
-                                                       value="{{old('picture_travel')}}"
-                                                       onchange="loadfile(event)" id="foto">
+                                                <input
+                                                    class="form-control {{$errors->has('picture_travel')?'is-invalid':''}}"
+                                                    type="file" name="picture_travel"
+                                                    value="{{old('picture_travel')}}"
+                                                    onchange="loadfile(event)" id="foto">
                                                 <br/>
                                                 <img id="output" class="img-fluid" height="100" width="100"
                                                      style="display: none">
@@ -124,15 +126,12 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label >Hari</label>
+                                                <label>Hari</label>
                                                 <select class="select2 form-control" multiple="multiple" name="day[]">
-                                                    <option value="Senin">Senin</option>
-                                                    <option value="Selasa">Selasa</option>
-                                                    <option value="Rabu">Rabu</option>
-                                                    <option value="Kamis">Kamis</option>
-                                                    <option value="Jumat">Jumat</option>
-                                                    <option value="Sabtu">Sabtu</option>
-                                                    <option value="Minggu">Minggu</option>
+                                                    @php($hari = ['Senin','Selasa','Rabu','Kamis','Jumat','Sabtu','Minggu'])
+                                                    @for($i = 0; $i < count($hari); $i++ )
+                                                        <option value="{{$hari[$i]}}">{{$hari[$i]}}</option>
+                                                    @endfor
                                                 </select>
                                             </div>
 

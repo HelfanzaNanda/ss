@@ -24,16 +24,15 @@ class CarController extends Controller
     public function index()
     {
         try {
-            $cars = Car::where('status', true)->get();
             $results = [];
+            $cars = Car::where('status', true)->get();
             foreach ($cars as $car){
-                $travel = AdminTravel::where('id', $car->id_travel)->first();
-                $results = [
+                $results[] = [
                     'travel' => [
-                        'id' => $travel->id,
-                        'business_name' => $travel->business_name,
-                        'address' => $travel->address,
-                        'telephone' => $travel->telephone,
+                        'id' => $car->travel->id,
+                        'business_name' => $car->travel->business_name,
+                        'address' => $car->travel->address,
+                        'telephone' => $car->travel->telephone,
                         'cars' => [
                             'id' => $car->id,
                             'to' => $car->to,
@@ -62,7 +61,6 @@ class CarController extends Controller
         try {
             $cars = Car::where('to', $to)->where('status', true)->get();
             //$data = DB::table('cars')->select('to')->where('status', true)->get();
-
             return response()->json([
                 'status' => true,
                 'message' => 'Berhasil',

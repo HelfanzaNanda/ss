@@ -77,6 +77,7 @@
                                 <div class="card-body pt-0">
                                     <form class="form-horizontal" action="{{route('travel.login.submit')}}" method="post">
                                         @csrf
+
                                         <fieldset class="form-group position-relative has-icon-left mb-1">
 
                                             <input type="text" class="form-control @error('email') is-invalid @enderror"

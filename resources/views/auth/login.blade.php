@@ -15,8 +15,9 @@
     <link rel="apple-touch-icon" href="../../../app-assets/images/ico/apple-icon-120.png">
     <link rel="shortcut icon" type="image/x-icon"
           href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/images/ico/favicon.ico">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i%7COpen+Sans:300,300i,400,400i,600,600i,700,700i"
-          rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i%7COpen+Sans:300,300i,400,400i,600,600i,700,700i"
+        rel="stylesheet">
 
     <!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/app-assets/vendors/css/vendors.min.css')}}">
@@ -58,10 +59,12 @@
                             </div>
                             <div class="card-content">
                                 <div class="card-body">
-                                    <form class="form-horizontal form-simple" method="POST" action="{{ route('login') }}" novalidate>
+                                    <form class="form-horizontal form-simple" method="POST"
+                                          action="{{ route('login') }}" novalidate>
                                         @csrf
                                         <fieldset class="form-group position-relative has-icon-left mb-0">
-                                            <input id="email" type="email" name="email" value="{{ old('email') }}" required
+                                            <input id="email" type="email" name="email" value="{{ old('email') }}"
+                                                   required
                                                    autocomplete="email" autofocus placeholder="Email"
                                                    class="form-control form-control-lg @error('email') is-invalid @enderror">
                                             @error('email')
@@ -72,7 +75,8 @@
                                         </fieldset>
                                         <br>
                                         <fieldset class="form-group position-relative has-icon-left">
-                                            <input id="password" type="password" name="password" required autocomplete="current-password"
+                                            <input id="password" type="password" name="password" required
+                                                   autocomplete="current-password"
                                                    class="form-control form-control-lg @error('password') is-invalid @enderror"
                                                    placeholder="Password">
                                             @error('password')
@@ -90,7 +94,7 @@
                                             </div>
                                         </div>
                                         <button type="submit" class="btn btn-primary btn-lg btn-block"><i
-                                                    class="fa fa-unlock"></i> Login
+                                                class="fa fa-unlock"></i> Login
                                         </button>
                                     </form>
                                 </div>
@@ -122,5 +126,3 @@
 
 </body>
 </html>
-
-

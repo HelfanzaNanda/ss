@@ -51,10 +51,10 @@
 
     });
 </script>
-<script >
-    $(document).ready(function () {
-        $('.hour').timePicker({
-            timeFormat: 'HH:mm',
-        });
+<script type="text/javascript">
+    $(function () {
+       $('#time').datetimepicker({
+           format : 'LT'
+       });
     });
 </script>

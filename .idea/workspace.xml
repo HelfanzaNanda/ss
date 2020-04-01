@@ -3,12 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="42e660d4-05ff-4435-b513-e4c398a519c6" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/v1/User/CarController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/v1/User/CarController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/v1/User/TravelController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/v1/User/TravelController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/CarResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/CarResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/web/AdminTravel/CarController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/web/AdminTravel/CarController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Resources/TravelResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/TravelResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth_travel/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth_travel/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/travel/car/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/travel/car/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/templates/partials/travel/_script.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/templates/partials/travel/_script.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -145,34 +148,6 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1ZkXR07pDKrmFof1hwUFUSg3HEZ" />
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State>
-            <id />
-          </State>
-          <State>
-            <id>Code style issuesJavaScript</id>
-          </State>
-          <State>
-            <id>JavaScript</id>
-          </State>
-          <State>
-            <id>PHP</id>
-          </State>
-          <State>
-            <id>Probable bugsPHP</id>
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>PhpVoidFunctionResultUsedInspection</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
-  </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
   </component>
@@ -181,7 +156,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="settings.editor.selected.configurable" value="project.scopes" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.JavaScript" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -244,7 +220,12 @@
       <workItem from="1585448503503" duration="4615000" />
       <workItem from="1585460701820" duration="14766000" />
       <workItem from="1585533867073" duration="1078000" />
-      <workItem from="1585542610166" duration="5721000" />
+      <workItem from="1585542610166" duration="8097000" />
+      <workItem from="1585616026883" duration="12658000" />
+      <workItem from="1585636213667" duration="651000" />
+      <workItem from="1585636923794" duration="2633000" />
+      <workItem from="1585723587603" duration="618000" />
+      <workItem from="1585727256585" duration="1400000" />
     </task>
     <servers />
   </component>

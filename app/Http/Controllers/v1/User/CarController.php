@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\v1\User;
 
+use App\AdminTravel;
 use App\Car;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\CarResource;
@@ -23,7 +24,7 @@ class CarController extends Controller
     public function index()
     {
         try{
-            $cars = Car::where('status', true)->get();
+            $cars = AdminTravel::all();
             return response()->json([
                 'status' => true,
                 'message' => 'Berhasil',

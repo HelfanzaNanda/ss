@@ -83,17 +83,26 @@ class CarController extends Controller
         $destinationPath = public_path('uploads/travel/car');
         $picture_travel->move($destinationPath, $path);
 
+        //dd($logo);
+
+        $logo = ['Bandung', 'Bekasi', 'Bogor', 'Jakarta', 'Jogja', 'Magelang', 'Malang',
+            'Semarang', 'Solo', 'Surabaya', 'Tanggerang'];
         $data = new Car();
-        $data->id_travel = Auth::guard('travel')->user()->id;
-        $data->number_plate = strtoupper($request->number_plate);
-        $data->name = $request->name;
-        $data->from = 'Tegal';
-        $data->to = $request->to;
-        $data->price = $request->price;
-        $data->seat = $request->seat;
-        $data->facility = $request->facility;
-        $data->picture_travel = $path;
-        $data->status = '1';
+        for ($i = 0; $i < count($logo); $i++){
+            if ($request->to == $logo[$i]){
+                $data->id_travel = Auth::guard('travel')->user()->id;
+                $data->number_plate = strtoupper($request->number_plate);
+                $data->name = $request->name;
+                $data->from = 'Tegal';
+                $data->to = ucwords($request->to);
+                $data->logo_to = $logo[$i].'.jpg';
+                $data->price = $request->price;
+                $data->seat = $request->seat;
+                $data->facility = $request->facility;
+                $data->picture_travel = $path;
+                $data->status = '1';
+            }
+        }
         $data->save();
 
         $hours = $request->hour;
@@ -114,9 +123,9 @@ class CarController extends Controller
             ];
         }
         DB::table('days')->insert($itemdays);
-
-
         return redirect()->route('car.index')->with('create', 'Berhasil menambahkan data!');
+
+
         /*return response()->json([
             'data' => $data,
             'hour' => $itemhours,

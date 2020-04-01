@@ -56,17 +56,16 @@
                                             </div>
 
                                             <div id="myRepeatingFields">
-                                                <div class="entry input-group col-xs-3" style="margin-top: 10px;">
-                                                    <input class="form-control" name="hour[]" type="time"/>
-                                                    <span class="input-group-btn">
-                                                        <button type="button" class="btn btn-success btn-add">
+                                                <div class="entry input-group date col-xs-3 mt-1" id="time">
+                                                    <div class="input-group-prepend">
+                                                        <button class="btn btn-primary btn-add" type="button">
                                                             <span class="fa fa-plus" aria-hidden="true"
                                                                   style="font-size: 12px;"></span>
                                                         </button>
-                                                    </span>
+                                                    </div>
+                                                    <input class="form-control" name="hour[]" type="time"/>
                                                 </div>
                                             </div>
-
                                         </div>
 
                                         <div class="col-md-6">

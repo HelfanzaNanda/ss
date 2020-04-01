@@ -24,9 +24,9 @@ class CarController extends Controller
     public function index()
     {
         try {
-            $results = [];
             $cars = Car::where('status', true)->get();
-            foreach ($cars as $car){
+            $results = [];
+            foreach ($cars as $car) {
                 $results[] = [
                     'travel' => [
                         'id' => $car->travel->id,
@@ -43,14 +43,14 @@ class CarController extends Controller
             }
 
             return response()->json([
-               'status' => true,
-               'message' => 'berhasil',
-               'data' => $results,
+                'status' => true,
+                'message' => 'berhasil',
+                'data' => $results,
             ], 200);
         } catch (\Exception $exception) {
             return response()->json([
                 'status' => false,
-                'message' => $exception,
+                'message' => $exception->getMessage(),
                 'data' => [],
             ], 500);
         }
@@ -60,23 +60,60 @@ class CarController extends Controller
     {
         try {
             $cars = Car::where('to', $to)->where('status', true)->get();
-            //$data = DB::table('cars')->select('to')->where('status', true)->get();
+            $results = [];
+            foreach ($cars as $car) {
+                $results[] = [
+                    'travel' => [
+                        'id' => $car->travel->id,
+                        'business_name' => $car->travel->business_name,
+                        'address' => $car->travel->address,
+                        'telephone' => $car->travel->telephone,
+                        'cars' => [
+                            'id' => $car->id,
+                            'to' => $car->to,
+                            'logo' => $car->logo_to,
+                            'days' => $this->getDay($car->days),
+                            'hours' => $this->getHour($car->hours)
+                        ]
+                    ]
+                ];
+            }
             return response()->json([
                 'status' => true,
                 'message' => 'Berhasil',
-                'data' => $this->getData($cars),
-                /*'data' => TravelResource::collection($cars),*/
+                'data' => $results,
             ], 200);
+
         } catch (\Exception $exception) {
             return response()->json([
                 'status' => false,
-                'message' => $exception,
-                /*'data' => $this->getData($data),*/
+                'message' => $exception->getMessage(),
                 'data' => [],
-            ], 200);
+            ], 500);
         }
     }
 
+    private function getDay($days){
+        $results = [];
+        foreach ($days as $day){
+            $results[] = [
+                'id_car' => $day->id_car,
+                'day' => $day->day
+            ];
+        }
+        return $results;
+    }
+
+    private function getHour($hours){
+        $results = [];
+        foreach ($hours as $hour){
+            $results[] = [
+                'id_car' => $hour->id_car,
+                'hour' => $hour->hour
+            ];
+        }
+        return $results;
+    }
 
     function getData($data)
     {

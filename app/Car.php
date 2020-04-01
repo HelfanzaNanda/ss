@@ -17,8 +17,6 @@ class Car extends Model
     public function days()
     {
         return $this->hasMany(Day::class, 'id_car', 'id');
-            /*->select(['id','id_car','day'])
-            ->groupBy('day');*/
     }
 
     public function hours()

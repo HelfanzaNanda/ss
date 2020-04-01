@@ -23,26 +23,43 @@ class CarController extends Controller
 
     public function index()
     {
-        try{
-            $cars = AdminTravel::all();
-            return response()->json([
-                'status' => true,
-                'message' => 'Berhasil',
-                'data' => TravelResource::collection($cars),
-            ], 200);
+        try {
+            $cars = Car::where('status', true)->get();
+            $results = [];
+            foreach ($cars as $car){
+                $travel = AdminTravel::where('id', $car->id_travel)->first();
+                $results = [
+                    'travel' => [
+                        'id' => $travel->id,
+                        'business_name' => $travel->business_name,
+                        'address' => $travel->address,
+                        'telephone' => $travel->telephone,
+                        'cars' => [
+                            'id' => $car->id,
+                            'to' => $car->to,
+                            'logo' => $car->logo_to
+                        ]
+                    ]
+                ];
+            }
 
-        }catch (\Exception $exception){
+            return response()->json([
+               'status' => true,
+               'message' => 'berhasil',
+               'data' => $results,
+            ], 200);
+        } catch (\Exception $exception) {
             return response()->json([
                 'status' => false,
                 'message' => $exception,
                 'data' => [],
-            ], 200);
+            ], 500);
         }
     }
 
     public function show($to)
     {
-        try{
+        try {
             $cars = Car::where('to', $to)->where('status', true)->get();
             //$data = DB::table('cars')->select('to')->where('status', true)->get();
 
@@ -52,7 +69,7 @@ class CarController extends Controller
                 'data' => $this->getData($cars),
                 /*'data' => TravelResource::collection($cars),*/
             ], 200);
-        }catch (\Exception $exception){
+        } catch (\Exception $exception) {
             return response()->json([
                 'status' => false,
                 'message' => $exception,
@@ -63,9 +80,10 @@ class CarController extends Controller
     }
 
 
-    function getData($data){
+    function getData($data)
+    {
         $results = [];
-        foreach ($data as $d){
+        foreach ($data as $d) {
             $travel = Travel::where('id', $d->id_travel)->first();
             $results = [
                 'travel' => [

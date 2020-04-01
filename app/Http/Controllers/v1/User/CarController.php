@@ -63,7 +63,7 @@ class CarController extends Controller
             $cars = Car::where('to', $to)->where('status', true)->get();
             $results = [];
             foreach ($cars as $car) {
-                if ($car->id == $car->driver->id_car){
+                if($car->driver){
                     $results[] = [
                         'travel' => [
                             'id' => $car->travel->id,
@@ -74,11 +74,7 @@ class CarController extends Controller
                                 'id' => $car->id,
                                 'to' => $car->to,
                                 'logo' => $car->logo_to,
-                                'driver' => [
-                                    'id_car' => $car->driver->id,
-                                    'name' => $car->driver->name,
-                                    'avatar' => $car->driver->avatar
-                                ],
+                                'driver' => $car->driver,
                                 'days' => $this->getDay($car->days),
                                 'hours' => $this->getHour($car->hours)
                             ]
@@ -86,9 +82,10 @@ class CarController extends Controller
                     ];
                 }
             }
+
             return response()->json([
-                'status' => true,
-                'message' => 'Berhasil',
+                'status' => false,
+                'message' => 'berhasil',
                 'data' => $results,
             ], 200);
 
@@ -101,9 +98,10 @@ class CarController extends Controller
         }
     }
 
-    private function getDay($days){
+    private function getDay($days)
+    {
         $results = [];
-        foreach ($days as $day){
+        foreach ($days as $day) {
             $results[] = [
                 'id_car' => $day->id_car,
                 'day' => $day->day
@@ -112,34 +110,15 @@ class CarController extends Controller
         return $results;
     }
 
-    private function getHour($hours){
+    private function getHour($hours)
+    {
         $results = [];
-        foreach ($hours as $hour){
+        foreach ($hours as $hour) {
             $results[] = [
                 'id_car' => $hour->id_car,
                 'hour' => $hour->hour
             ];
         }
-        return $results;
-    }
-
-    function getData($data)
-    {
-        $results = [];
-        foreach ($data as $d) {
-            $travel = Travel::where('id', $d->id_travel)->first();
-            $results = [
-                'travel' => [
-                    'id' => $travel->id,
-                    'cars' => [
-                        'number_plate' => $d->number_plate,
-                        'days' => $d->days,
-                        'hours' => $d->hours
-                    ]
-                ]
-            ];
-        }
-
         return $results;
     }
 }

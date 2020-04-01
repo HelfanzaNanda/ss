@@ -72,6 +72,7 @@ class CarController extends Controller
                             'id' => $car->id,
                             'to' => $car->to,
                             'logo' => $car->logo_to,
+                            'driver' => $car->driver->name,
                             'days' => $this->getDay($car->days),
                             'hours' => $this->getHour($car->hours)
                         ]

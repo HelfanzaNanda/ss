@@ -4,6 +4,7 @@ namespace App\Http\Controllers\v1\User;
 
 use App\AdminTravel;
 use App\Car;
+use App\Driver;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\CarResource;
 use App\Http\Resources\TravelResource;
@@ -62,26 +63,28 @@ class CarController extends Controller
             $cars = Car::where('to', $to)->where('status', true)->get();
             $results = [];
             foreach ($cars as $car) {
-                $results[] = [
-                    'travel' => [
-                        'id' => $car->travel->id,
-                        'business_name' => $car->travel->business_name,
-                        'address' => $car->travel->address,
-                        'telephone' => $car->travel->telephone,
-                        'cars' => [
-                            'id' => $car->id,
-                            'to' => $car->to,
-                            'logo' => $car->logo_to,
-                            'driver' => [
-                                'id_driver' => $car->driver->id,
-                                'name' => $car->driver->name,
-                                'avatar' => $car->driver->avatar
-                            ],
-                            'days' => $this->getDay($car->days),
-                            'hours' => $this->getHour($car->hours)
+                if ($car->id == $car->driver->id_car){
+                    $results[] = [
+                        'travel' => [
+                            'id' => $car->travel->id,
+                            'business_name' => $car->travel->business_name,
+                            'address' => $car->travel->address,
+                            'telephone' => $car->travel->telephone,
+                            'cars' => [
+                                'id' => $car->id,
+                                'to' => $car->to,
+                                'logo' => $car->logo_to,
+                                'driver' => [
+                                    'id_car' => $car->driver->id,
+                                    'name' => $car->driver->name,
+                                    'avatar' => $car->driver->avatar
+                                ],
+                                'days' => $this->getDay($car->days),
+                                'hours' => $this->getHour($car->hours)
+                            ]
                         ]
-                    ]
-                ];
+                    ];
+                }
             }
             return response()->json([
                 'status' => true,

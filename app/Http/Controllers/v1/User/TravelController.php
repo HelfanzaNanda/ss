@@ -42,7 +42,7 @@ class TravelController extends Controller
                         'business_name' => $car->travel->business_name,
                         'address' => $car->travel->address,
                         'telephone' => $car->travel->telephone,
-                        'cars' => [
+                        'car' => [
                             'id' => $car->id,
                             'plat' => $car->number_plate,
                             'name' => $car->name,

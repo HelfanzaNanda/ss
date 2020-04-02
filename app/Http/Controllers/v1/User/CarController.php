@@ -29,6 +29,14 @@ class CarController extends Controller
             $results = [];
             foreach ($cars as $car) {
                 $results[] = [
+                    'cars' => [
+                        'id' => $car->id,
+                        'to' => $car->to,
+                        'logo' => $car->logo_to
+                    ]
+                ];
+
+                /*$results[] = [
                     'travel' => [
                         'id' => $car->travel->id,
                         'business_name' => $car->travel->business_name,
@@ -40,7 +48,7 @@ class CarController extends Controller
                             'logo' => $car->logo_to
                         ]
                     ]
-                ];
+                ];*/
             }
 
             return response()->json([

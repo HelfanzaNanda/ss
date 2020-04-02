@@ -6,6 +6,7 @@ use App\AdminTravel;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\TravelResource;
 use Illuminate\Http\Request;
+use App\Car;
 
 class TravelController extends Controller
 {

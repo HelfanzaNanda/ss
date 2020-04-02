@@ -34,17 +34,31 @@ class TravelController extends Controller
                 if($car->driver){
                     $results[] = [
                         'id' => $car->travel->id,
+                        'license_number' => $car->travel->license_number,
+                        'business_owner' => $car->travel->business_owner,
+                        'address' => $car->travel->address,
+                        'telephone' => $car->travel->telephone,
                         'business_name' => $car->travel->business_name,
                         'address' => $car->travel->address,
                         'telephone' => $car->travel->telephone,
                         'cars' => [
                             'id' => $car->id,
+                            'plat' => $car->number_plate,
+                            'name' => $car->name,
+                            'from' => $car->from,
                             'to' => $car->to,
                             'logo' => $car->logo_to,
+                            'price' => $car->price,
+                            'picture_travel' => $car->picture_travel,
+                            'seat' => $car->seat,
+                            'facility' => $car->facility,
                             'driver' => [
                                 'id' => $car->driver->id,
+                                'nik'   => $car->driver->nik,
                                 'name' => $car->driver->name,
-                                'avatar' => $car->driver->avatar
+                                'avatar' => $car->driver->avatar,
+                                'address' => $car->driver->address,
+                                'telephone' => $car->driver->telephone
                             ],
                             'days' => $this->getDay($car->days),
                             'hours' => $this->getHour($car->hours)
@@ -54,7 +68,7 @@ class TravelController extends Controller
             }
 
             return response()->json([
-                'status' => false,
+                'status' => true,
                 'message' => 'berhasil',
                 'data' => $results,
             ], 200);

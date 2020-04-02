@@ -82,4 +82,28 @@ class TravelController extends Controller
             ], 500);
         }
     }
+
+    private function getDay($days)
+    {
+        $results = [];
+        foreach ($days as $day) {
+            $results[] = [
+                'id_car' => $day->id_car,
+                'day' => $day->day
+            ];
+        }
+        return $results;
+    }
+
+    private function getHour($hours)
+    {
+        $results = [];
+        foreach ($hours as $hour) {
+            $results[] = [
+                'id_car' => $hour->id_car,
+                'hour' => $hour->hour
+            ];
+        }
+        return $results;
+    }
 }

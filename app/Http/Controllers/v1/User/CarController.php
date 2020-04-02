@@ -78,8 +78,7 @@ class CarController extends Controller
             foreach ($cars as $car) {
                 if($car->driver){
                     $results[] = [
-                        'travel' => [
-                            'id' => $car->travel->id,
+                        'id' => $car->travel->id,
                             'business_name' => $car->travel->business_name,
                             'address' => $car->travel->address,
                             'telephone' => $car->travel->telephone,
@@ -95,7 +94,6 @@ class CarController extends Controller
                                 'days' => $this->getDay($car->days),
                                 'hours' => $this->getHour($car->hours)
                             ]
-                        ]
                     ];
                 }
             }

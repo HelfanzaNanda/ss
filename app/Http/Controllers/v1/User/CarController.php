@@ -17,10 +17,10 @@ use Illuminate\Support\Facades\DB;
 class CarController extends Controller
 {
 
-    public function __construct()
+    /*public function __construct()
     {
         $this->middleware('auth:api');
-    }
+    }*/
 
     public function index()
     {
@@ -70,38 +70,66 @@ class CarController extends Controller
         }
     }
 
-    public function show($to)
+private function driver($cars){
+    $results= [];
+    foreach ($cars as $car) {
+        $driver = Driver::where('id_car',$car->id)->first();
+        if ($driver) {
+          $results[] = [
+            'id' => $car->id,
+            'plat' => $car->number_plate,
+            'name' => $car->name,
+            'from' => $car->from,
+            'to' => $car->to,
+            'logo' => $car->logo_to,
+            'price' => $car->price,
+            'picture_travel' => $car->picture_travel,
+            'seat' => $car->seat,
+            'facility' => $car->facility,
+            'driver' => $driver,
+            'days' => $this->getDay($car->days),
+            'hours' => $this->getHour($car->hours)
+            ];  
+        } 
+    }
+
+    return $results;
+}
+
+public function show($to)
     {
         try {
             $cars = Car::where('to', $to)->where('status', true)->get();
             $results = [];
+            $filteredCar = [];
             foreach ($cars as $car) {
                 if($car->driver){
-                    $results[] = [
+                    $car['travel'] = [
                         'id' => $car->travel->id,
-                            'business_name' => $car->travel->business_name,
-                            'address' => $car->travel->address,
-                            'telephone' => $car->travel->telephone,
-                            'cars' => [
-                                'id' => $car->id,
-                                'to' => $car->to,
-                                'logo' => $car->logo_to,
-                                'driver' => [
-                                    'id' => $car->driver->id,
-                                    'name' => $car->driver->name,
-                                    'avatar' => $car->driver->avatar
-                                ],
-                                'days' => $this->getDay($car->days),
-                                'hours' => $this->getHour($car->hours)
-                            ]
+                        'business_owner' => $car->travel->license_number
                     ];
+
+                    array_push($filteredCar, $car);
+                    // $results[] = [
+                    //     'cars' => $this->driver($car->travel->cars),
+                    //     'travel' => [
+                    //         'id' => $car->travel->id,
+                    //         'license_number' => $car->travel->license_number,
+                    //         'business_owner' => $car->travel->business_owner,
+                    //         'address' => $car->travel->address,
+                    //         'telephone' => $car->travel->telephone,
+                    //         'business_name' => $car->travel->business_name,
+                    //         'address' => $car->travel->address,
+                    //         'telephone' => $car->travel->telephone,
+                    //     ]
+                    // ];
                 }
             }
 
             return response()->json([
-                'status' => false,
+                'status' => true,
                 'message' => 'berhasil',
-                'data' => $results,
+                'data' => $filteredCar,
             ], 200);
 
         } catch (\Exception $exception) {

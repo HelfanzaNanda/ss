@@ -17,10 +17,10 @@ use Illuminate\Support\Facades\DB;
 class CarController extends Controller
 {
 
-    /*public function __construct()
+    public function __construct()
     {
         $this->middleware('auth:api');
-    }*/
+    }
 
     public function index()
     {

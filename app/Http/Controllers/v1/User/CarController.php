@@ -29,11 +29,9 @@ class CarController extends Controller
             $results = [];
             foreach ($cars as $car) {
                 $results[] = [
-                    'cars' => [
-                        'id' => $car->id,
-                        'to' => $car->to,
-                        'logo' => $car->logo_to
-                    ]
+                    'id' => $car->id,
+                    'to' => $car->to,
+                    'logo' => $car->logo_to
                 ];
 
                 /*$results[] = [

@@ -106,23 +106,12 @@ public function show($to)
                 if($car->driver){
                     $car['travel'] = [
                         'id' => $car->travel->id,
-                        'business_owner' => $car->travel->license_number
-                    ];
+                        'business_owner' => $car->travel->license_number,
+                        'days' => $this->getDay($car->days),
+                        'hours' => $this->getHour($car->hours)
 
+                    ];
                     array_push($filteredCar, $car);
-                    // $results[] = [
-                    //     'cars' => $this->driver($car->travel->cars),
-                    //     'travel' => [
-                    //         'id' => $car->travel->id,
-                    //         'license_number' => $car->travel->license_number,
-                    //         'business_owner' => $car->travel->business_owner,
-                    //         'address' => $car->travel->address,
-                    //         'telephone' => $car->travel->telephone,
-                    //         'business_name' => $car->travel->business_name,
-                    //         'address' => $car->travel->address,
-                    //         'telephone' => $car->travel->telephone,
-                    //     ]
-                    // ];
                 }
             }
 

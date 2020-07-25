@@ -16,7 +16,7 @@ class ActivationController extends Controller
         $user->activation_token = null;
         $user->update();
 
-        Auth::loginUsingId($user->id);
+        Auth::guard('travel')->loginUsingId($user->id);
         return redirect()->route('tdashboard.index')->with('success', 'Berhasil Aktivasi Email!, Sekarang anda sudah masuk!');
     }
 }

@@ -19,7 +19,8 @@ class AdminTravel extends Authenticatable implements MustVerifyEmail
 
     protected $guard = 'travel';
     protected $table = 'admin_travels';
-    protected $fillable = [
+    protected $guarded = [];
+    /*protected $fillable = [
         'id',
         'license_number',
         'business_owner',
@@ -32,7 +33,7 @@ class AdminTravel extends Authenticatable implements MustVerifyEmail
         'telephone',
         'status',
         'activation_token'
-    ];
+    ];*/
 
     /**
      * The attributes that should be hidden for arrays.

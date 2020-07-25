@@ -14,7 +14,7 @@ class AdminTravelActivationEmail
 {
     use Dispatchable, SerializesModels;
 
-    public $user;
+    public $travel;
 
     /**
      * Create a new event instance.
